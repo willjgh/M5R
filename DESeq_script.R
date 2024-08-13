@@ -1,4 +1,5 @@
 library(DESeq2)
+library(EnhancedVolcano)
 
 # load data
 counts_data <- read.csv('counts_combined.csv', row.names = "X")
@@ -25,4 +26,13 @@ summary(res)
 
 # plotting
 plotMA(res)
+
+# volcano plot
+EnhancedVolcano(res,
+                lab = rownames(res),
+                x = 'log2FoldChange',
+                y = 'pvalue',
+                pointSize = 2.0,
+                labSize = 2.0)
+
 
