@@ -11,8 +11,8 @@ dds <- DESeqDataSetFromMatrix(countData = counts_data,
                        design = ~ status)
 
 # optional filtering of genes with low counts
-#keep <- rowSums(counts(dds)) >= 1
-#dds <- dds[keep,]
+keep <- rowSums(counts(dds)) >= 0
+dds <- dds[keep,]
 
 # set factor level e.g. status: original vs perturbed cells
 dds$status <- relevel(dds$status, ref = "original")
