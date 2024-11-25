@@ -25,10 +25,10 @@ import tqdm
 # Settings
 # ------------------------------------------------
 
-output_filename = ".\Truncations\truncations_high"
+output_filename = "D:/Projects/ProjectPaper/M5R/Interaction/Truncations/truncations_low.json"
 M = 10
 N = 10
-beta = np.array([1.0 for j in range(1000)])
+beta = np.array([0.06 for j in range(1)])
 thresh_OG = 10**-6
 
 # ------------------------------------------------
@@ -138,7 +138,7 @@ def preComputeTruncation(M, N, beta, thresh_OG):
             m_OG, M_OG, n_OG, N_OG = findTrunc(x1_OB, x2_OB, beta, thresh_OG)
 
             # store
-            truncations[(x1_OB, x2_OB)] = (m_OG, M_OG, n_OG, N_OG)
+            truncations[f'({x1_OB}, {x2_OB})'] = (m_OG, M_OG, n_OG, N_OG)
 
     return truncations
 
@@ -152,4 +152,4 @@ truncations = preComputeTruncation(M, N, beta, thresh_OG)
 # Output
 # ------------------------------------------------
 
-json.dump(solution_dict, open(output_filename, 'w'))
+json.dump(truncations, open(output_filename, 'w'))

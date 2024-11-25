@@ -26,18 +26,20 @@ from gurobipy import GRB
 import scipy
 from ast import literal_eval
 import json
+import tqdm
 
 # ------------------------------------------------
 # Settings
 # ------------------------------------------------
 
-input_filename = ".\Datasets-Easy-Hard\"
-output_filename = ".\Results-Easy-Hard\"
-truncation_filename = ".\Truncations\"
+input_filename = "D:/Projects/ProjectPaper/M5R/Interaction/Datasets-Easy-Hard/counts_hard_med.csv"
+output_filename = "D:/Projects/ProjectPaper/M5R/Interaction/Results-Easy-Hard/hyp_hard_med.json"
+
+truncation_filename = "D:/Projects/ProjectPaper/M5R/Interaction/Truncations/truncations_med.json"
 
 thresh_OB = 10
 
-beta = np.array([1.0 for j in range(1000)])
+beta = np.array([0.5])
 truncations = json.load(open(truncation_filename))
 
 method = "hyp"
@@ -238,17 +240,17 @@ def optimization_hyp(bounds, beta, truncations, K=100, silent=True,
                      time_limit=300):
 
     # load WLS license credentials
-    options = json.load(open("../../../WLS_credentials.json"))
+    options = json.load(open("D:/Projects/ProjectPaper/WLS_credentials.json"))
+
+    # silence output
+    if silent:
+        options['OutputFlag'] = 0
     
     # environment context
     with gp.Env(params=options) as env:
 
         # model context
         with gp.Model('birth-death-regulation-capture-efficiency-hyp', env=env) as md:
-
-            # set options
-            if silent:
-                md.Params.LogToConsole = 0
 
             # set time limit: 5 minute default
             md.Params.TimeLimit = time_limit
@@ -270,14 +272,14 @@ def optimization_hyp(bounds, beta, truncations, K=100, silent=True,
 
                     try:
                         # lookup original truncation
-                        m_OG, M_OG, n_OG, N_OG = truncations[(x1_OB, x2_OB)]
+                        m_OG, M_OG, n_OG, N_OG = truncations[f'({x1_OB}, {x2_OB})']
 
                     except KeyError:
                         # compute if not available
                         m_OG, M_OG, n_OG, N_OG = findTrunc(x1_OB, x2_OB, beta, thresh_OG)
 
                         # store
-                        truncations[(x1_OB, x2_OB)] = (m_OG, M_OG, n_OG, N_OG)
+                        truncations[f'({x1_OB}, {x2_OB})'] = (m_OG, M_OG, n_OG, N_OG)
 
                     # if larger than current maximum states: update
                     if M_OG > max_x1_OG:
@@ -321,7 +323,7 @@ def optimization_hyp(bounds, beta, truncations, K=100, silent=True,
                 for x2_OB in range(n_OB, N_OB + 1):
                     
                     # individual truncation: lookup from pre-computed dict
-                    m_OG, M_OG, n_OG, N_OG = truncations[(x1_OB, x2_OB)]
+                    m_OG, M_OG, n_OG, N_OG = truncations[f'({x1_OB}, {x2_OB})']
                     
                     # sum over truncation range (INCLUSIVE): drop terms with coefficients < thresh
                     sum_expr = gp.quicksum([B(x1_OB, x2_OB, x1_OG, x2_OG, beta) * p1[x1_OG] * p2[x2_OG] for x1_OG in range(m_OG, M_OG + 1) for x2_OG in range(n_OG, N_OG + 1) if B(x1_OB, x2_OB, x1_OG, x2_OG, beta) >= thresh_OG])
@@ -417,8 +419,8 @@ def optimization_hyp(bounds, beta, truncations, K=100, silent=True,
                     else:
                         print(f"{key} = {val}")
 
-            # return model for IIS, etc
-            solution['model'] = md
+            # save runtime
+            solution['time'] = md.Runtime
 
     return solution
 
@@ -427,17 +429,17 @@ def optimization_min(bounds, beta, truncations, K=100, silent=True,
                      MIPGap=0.05, time_limit=300, BestBdThresh=0.0001):
 
     # load WLS license credentials
-    options = json.load(open("../../WLS_credentials.json"))
+    options = json.load(open("D:/Projects/ProjectPaper/WLS_credentials.json"))
+
+    # silence output
+    if silent:
+        options['OutputFlag'] = 0
     
     # environment context
     with gp.Env(params=options) as env:
 
         # model context
         with gp.Model('birth-death-regulation-capture-efficiency-min', env=env) as md:
-
-            # set options
-            if silent:
-                md.Params.LogToConsole = 0
 
             # set time limit: 5 minute default
             md.Params.TimeLimit = time_limit
@@ -471,14 +473,14 @@ def optimization_min(bounds, beta, truncations, K=100, silent=True,
 
                     try:
                         # lookup original truncation
-                        m_OG, M_OG, n_OG, N_OG = truncations[(x1_OB, x2_OB)]
+                        m_OG, M_OG, n_OG, N_OG = truncations[f'({x1_OB}, {x2_OB})']
 
                     except KeyError:
                         # compute if not available
                         m_OG, M_OG, n_OG, N_OG = findTrunc(x1_OB, x2_OB, beta, thresh_OG)
 
                         # store
-                        truncations[(x1_OB, x2_OB)] = (m_OG, M_OG, n_OG, N_OG)
+                        truncations[f'({x1_OB}, {x2_OB})'] = (m_OG, M_OG, n_OG, N_OG)
 
                     # if larger than current maximum states: update
                     if M_OG > max_x1_OG:
@@ -608,8 +610,8 @@ def optimization_min(bounds, beta, truncations, K=100, silent=True,
                     else:
                         print(f"{key} = {val}")
 
-            # return model for IIS, etc
-            solution['model'] = md
+            # save runtime
+            solution['time'] = md.Runtime
 
     return solution
 
@@ -626,10 +628,7 @@ counts_df = pd.read_csv(input_filename, index_col=0, converters={f'Cell-{j}': li
 solution_dict = {}
 
 # loop over dataset
-for i in range(100):
-
-    # display progress
-    print(i)
+for i in tqdm.tqdm(range(100)):
 
     # select sample
     samples = list(counts_df.loc[f'Gene-pair-{i}'])
@@ -637,30 +636,30 @@ for i in range(100):
     if method == "hyp":
 
         # bootstrap
-        bounds = bootstrap(samples, BS=1000, thresh=thresh_OB, printing=False)
+        bounds = bootstrap(samples, BS=1000, thresh_OB=thresh_OB, printing=False)
 
         # optimize: hyp
-        solution = optimization_B_hyp(bounds, beta, truncations, K=100, silent=True,
-                            print_solution=True, print_truncation=True, thresh_trunc=10**-6,
+        solution = optimization_hyp(bounds, beta, truncations, K=100, silent=True,
+                            print_solution=False, print_truncation=False, thresh_OG=10**-6,
                             time_limit=300)
 
         # store result
-        solution_dict[i] = {'status': solution['status'], 'time': solution['model'].Runtime}
+        solution_dict[i] = {'status': solution['status'], 'time': solution['time']}
 
     elif method == "min":
 
         # bootstrap
-        bounds = bootstrap(samples, BS=1000, thresh=thresh_OB, printing=False)
+        bounds = bootstrap(samples, BS=1000, thresh_OB=thresh_OB, printing=False)
 
         # optimize: min
         solution = optimization_min(bounds, beta, truncations, K=100, silent=True,
-                        print_solution=True, print_truncation=True, thresh_trunc=10**-6,
+                        print_solution=False, print_truncation=False, thresh_OG=10**-6,
                         MIPGap=0.05, time_limit=300, BestBdThresh=0.0001)
 
         # store result
-        solution_dict[i] = {'bound': solution['k_reg'][0], 'status': solution['k_reg'][1], 'time': solution['model'].Runtime}
+        solution_dict[i] = {'bound': solution['k_reg'][0], 'status': solution['k_reg'][1], 'time': solution['time']}
 
-    elif method = "pearson":
+    elif method == "pearson":
 
         # select individual samples
         x1_samples = [x[0] for x in samples]
