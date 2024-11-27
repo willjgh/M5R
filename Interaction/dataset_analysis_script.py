@@ -32,18 +32,16 @@ import tqdm
 # Settings
 # ------------------------------------------------
 
-input_filename = "D:/Projects/ProjectPaper/M5R/Interaction/Datasets-Easy-Hard/counts_hard_med.csv"
-output_filename = "D:/Projects/ProjectPaper/M5R/Interaction/Results-Easy-Hard/hyp_hard_med.json"
+input_filename = "D:/Projects/ProjectPaper/M5R/Interaction/Datasets-Easy-Hard/counts_hard_high_noInt.csv"
+output_filename = "D:/Projects/ProjectPaper/M5R/Interaction/Results-Easy-Hard/min_hard_high_noInt.json"
 
-truncation_filename = "D:/Projects/ProjectPaper/M5R/Interaction/Truncations/truncations_med.json"
+method = "min"
+
+truncation_filename = "D:/Projects/ProjectPaper/M5R/Interaction/Truncations/truncations_high.json"
+beta = np.array([1.0])
 
 thresh_OB = 10
-
-beta = np.array([0.5])
 truncations = json.load(open(truncation_filename))
-
-method = "hyp"
-
 rng = np.random.default_rng(3844)
 
 # ------------------------------------------------
@@ -516,7 +514,7 @@ def optimization_min(bounds, beta, truncations, K=100, silent=True,
                 for x2_OB in range(n_OB, N_OB + 1):
 
                     # individual truncation: lookup from pre-computed dict
-                    m_OG, M_OG, n_OG, N_OG = truncations[(x1_OB, x2_OB)]
+                    m_OG, M_OG, n_OG, N_OG = truncations[f'({x1_OB}, {x2_OB})']
                     
                     # sum over truncation range (INCLUSIVE): drop terms with coefficients < thresh
                     sum_expr = gp.quicksum([B(x1_OB, x2_OB, x1_OG, x2_OG, beta) * p[x1_OG, x2_OG] for x1_OG in range(m_OG, M_OG + 1) for x2_OG in range(n_OG, N_OG + 1) if B(x1_OB, x2_OB, x1_OG, x2_OG, beta) >= thresh_OG])
