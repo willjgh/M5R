@@ -32,10 +32,10 @@ import tqdm
 # Settings
 # ------------------------------------------------
 
-input_filename = "D:/Projects/ProjectPaper/M5R/Interaction/Datasets-Easy-Hard/counts_hard_high_noInt.csv"
-output_filename = "D:/Projects/ProjectPaper/M5R/Interaction/Results-Easy-Hard/min_hard_high_noInt.json"
+input_filename = "D:/Projects/ProjectPaper/M5R/Interaction/Datasets-Easy-Hard/counts_hard_high.csv"
+output_filename = "D:/Projects/ProjectPaper/M5R/Interaction/Results-Easy-Hard/spearman_hard_high.json"
 
-method = "min"
+method = "spearman"
 
 truncation_filename = "D:/Projects/ProjectPaper/M5R/Interaction/Truncations/truncations_high.json"
 beta = np.array([1.0])
@@ -667,7 +667,7 @@ for i in tqdm.tqdm(range(100)):
         pearson = scipy.stats.pearsonr(x1_samples, x2_samples)
 
         # store result
-        solution_dict[i] = {'pvalue': float(pearson.statistic), 'statistic': float(pearson.pvalue)}
+        solution_dict[i] = {'pvalue': float(pearson.pvalue), 'statistic': float(pearson.statistic)}
 
     elif method == "spearman":
 
@@ -679,7 +679,7 @@ for i in tqdm.tqdm(range(100)):
         spearman = scipy.stats.spearmanr(x1_samples, x2_samples)
 
         # store result
-        solution_dict[i] = {'pvalue': float(spearman.statistic), 'statistic': float(spearman.pvalue)}
+        solution_dict[i] = {'pvalue': float(spearman.pvalue), 'statistic': float(spearman.statistic)}
 
 
 # ------------------------------------------------
