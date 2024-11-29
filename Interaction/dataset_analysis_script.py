@@ -32,15 +32,16 @@ import tqdm
 # Settings
 # ------------------------------------------------
 
-input_filename = "D:/Projects/ProjectPaper/M5R/Interaction/Datasets-Easy-Hard/counts_hard_high.csv"
-output_filename = "D:/Projects/ProjectPaper/M5R/Interaction/Results-Easy-Hard/spearman_hard_high.json"
+input_filename = "D:/Projects/ProjectPaper/M5R/Interaction/Datasets-Easy-Hard/counts_easy_high_noInt.csv"
+output_filename = "D:/Projects/ProjectPaper/M5R/Interaction/Results-Easy-Hard/Low-Thresh-OB/min_easy_high_noInt.json"
 
-method = "spearman"
+method = "min"
 
 truncation_filename = "D:/Projects/ProjectPaper/M5R/Interaction/Truncations/truncations_high.json"
 beta = np.array([1.0])
 
-thresh_OB = 10
+thresh_OB = 5
+
 truncations = json.load(open(truncation_filename))
 rng = np.random.default_rng(3844)
 
