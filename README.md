@@ -58,6 +58,8 @@ TODO:
 - revisit using improved hyp methods
 - ROC / AUC classification metrics using confidence level data
 
+![screenshot](Interaction/Model-Experiments/cross_model_results/Images/cross_model_results_standard_image.png)
+
 ## Marginal Experiments
 
 Investigate the use of marginal probabilities and the performance of the Bootstrap for non-parametric estimation of confidence intervals
@@ -104,7 +106,7 @@ Investigate:
 
 Code to compute truncation limits for use in optimization:
 
-[image]
+![screenshot](Interaction/Truncations/Images/shifted_truncation.png)
 
 # Perturbation
 
