@@ -32,15 +32,15 @@ import tqdm
 # Settings
 # ------------------------------------------------
 
-input_filename = "D:/Projects/ProjectPaper/M5R/Interaction/Datasets-Easy-Hard/counts_easy_high_noInt.csv"
-output_filename = "D:/Projects/ProjectPaper/M5R/Interaction/Results-Easy-Hard/Low-Thresh-OB/min_easy_high_noInt.json"
+input_filename = "D:/Projects/ProjectPaper/M5R/Interaction/Realistic-Data/Datasets-Easy-Hard/counts_hard_med.csv"
+output_filename = "D:/Projects/ProjectPaper/M5R/Interaction/Realistic-Data/Results-Easy-Hard/Two-Sided-Correlation/spearman_hard_med.json"
 
-method = "min"
+method = "spearman"
 
 truncation_filename = "D:/Projects/ProjectPaper/M5R/Interaction/Truncations/truncations_high.json"
 beta = np.array([1.0])
 
-thresh_OB = 5
+thresh_OB = 10
 
 truncations = json.load(open(truncation_filename))
 rng = np.random.default_rng(3844)
@@ -670,6 +670,19 @@ for i in tqdm.tqdm(range(100)):
         # store result
         solution_dict[i] = {'pvalue': float(pearson.pvalue), 'statistic': float(pearson.statistic)}
 
+    elif method == "pearson_less":
+
+        # select individual samples
+        x1_samples = [x[0] for x in samples]
+        x2_samples = [x[1] for x in samples]
+
+        # test: 1 sided test for corr < 0
+        pearson = scipy.stats.pearsonr(x1_samples, x2_samples, alternative="less")
+
+        # store result
+        solution_dict[i] = {'pvalue': float(pearson.pvalue), 'statistic': float(pearson.statistic)}
+
+
     elif method == "spearman":
 
         # select individual samples
@@ -681,6 +694,18 @@ for i in tqdm.tqdm(range(100)):
 
         # store result
         solution_dict[i] = {'pvalue': float(spearman.pvalue), 'statistic': float(spearman.statistic)}
+
+    elif method == "spearman_less":
+
+        # select individual samples
+        x1_samples = [x[0] for x in samples]
+        x2_samples = [x[1] for x in samples]
+
+        # test: 1 sided test for corr < 0
+        pearson = scipy.stats.spearmanr(x1_samples, x2_samples, alternative="less")
+
+        # store result
+        solution_dict[i] = {'pvalue': float(pearson.pvalue), 'statistic': float(pearson.statistic)}
 
 
 # ------------------------------------------------
