@@ -32,10 +32,10 @@ import tqdm
 # Settings
 # ------------------------------------------------
 
-input_filename = "D:/Projects/ProjectPaper/M5R/Interaction/Realistic-Data/Datasets-Easy-Hard/counts_hard_med.csv"
-output_filename = "D:/Projects/ProjectPaper/M5R/Interaction/Realistic-Data/Results-Easy-Hard/Two-Sided-Correlation/spearman_hard_med.json"
+input_filename = "D:/Projects/ProjectPaper/M5R/Interaction/Realistic-Data/Datasets-Easy-Hard/counts_hard_low.csv"
+output_filename = "D:/Projects/ProjectPaper/M5R/Interaction/Realistic-Data/Results-Easy-Hard/Two-Sided-Correlation/pearson_hard_low.json"
 
-method = "spearman"
+method = "pearson"
 
 truncation_filename = "D:/Projects/ProjectPaper/M5R/Interaction/Truncations/truncations_high.json"
 beta = np.array([1.0])
