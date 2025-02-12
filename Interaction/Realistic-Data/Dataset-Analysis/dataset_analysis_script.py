@@ -32,13 +32,13 @@ import tqdm
 # Settings
 # ------------------------------------------------
 
-input_filename = "D:/Projects/ProjectPaper/M5R/Interaction/Realistic-Data/Datasets-Easy-Hard/counts_hard_low.csv"
-output_filename = "D:/Projects/ProjectPaper/M5R/Interaction/Realistic-Data/Results-Easy-Hard/Two-Sided-Correlation/pearson_hard_low.json"
+input_filename = "D:/Projects/ProjectPaper/M5R/Interaction/Realistic-Data/Datasets-Easy-Hard/counts_easy_med_noInt.csv"
+output_filename = "D:/Projects/ProjectPaper/M5R/Interaction/Realistic-Data/Results-Easy-Hard/hyp_easy_med_noInt.json"
 
-method = "pearson"
+method = "hyp"
 
-truncation_filename = "D:/Projects/ProjectPaper/M5R/Interaction/Truncations/truncations_high.json"
-beta = np.array([1.0])
+truncation_filename = "D:/Projects/ProjectPaper/M5R/Interaction/Truncations/truncations_med.json"
+beta = np.array([0.5])
 
 thresh_OB = 10
 
