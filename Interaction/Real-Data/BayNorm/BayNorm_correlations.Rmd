@@ -1,0 +1,193 @@
+---
+title: "BayNorm_correlations"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(BiocManager)
+library(bayNorm)
+```
+
+# BayNorm
+
+### Background
+
+Counts of gene transcripts can be observed within cells, but current methods have a low 'capture efficiency' (e.g. 10%) of true counts observed, leading to misleading count values that are lower and often zero/missing (dropout).
+
+The capture efficiency $\beta_{j}$ varies across cells j, but we assume that gene-specific effects are small (i.e. transcripts from any gene i have roughly proportion $\beta_{j}$ of being captured in cell j). The capture efficiency also varies between experiments, 'batch-effects', where different batches of cells have different capture rates due to many factors (environment, slight differences in experiment, time etc).
+
+### Method
+
+Use a bayesian approach to estimate posterior distribution of true/original transcript counts $x_{i,j}^{0}$.
+
+Prior: assume the true counts $x_{i,j}^{0}$ follow negative binomial distribution with parameters $\mu_i$, $\phi_i$ estimated using counts for gene i across all cells (or cells in the same batch: 'local')
+
+Likelihood: assume that the observed count $x_{i,j}$ follows a binomial distribution with N = $x_{i,j}^{0}$ and p = $\beta_j$ (natural choice: each transcript has chance $\beta_j$ of being observed)
+
+This gives the posterior as a shifted negative-binomial distribution.
+
+### Application
+
+Given the posterior distribution of the true counts $x_{i,j}^{0}$ for each gene i in each cells j there are several choices on how to proceed.
+
+(1) MAP: 'maximum a posteriori probability', take the mode of the posterior as estimate of the true count $x_{i,j}^{0}$ for all i, j, producing a 'normalized' dataset of the same size as the original
+
+(2) mean of posterior: as above, an estimate of the true count for each observed count
+
+(3) sample from posterior: for each (i, j) sample S count values from the posterior e.g. S = 20. This produces a dataset of the same size as the observed counts BUT each entry is a list of S samples from the corresponding posterior. These can be considered as 'artifical cells', giving a dataset of 20 * the number of original cells to analyse.
+
+# Data
+
+Important to remove all missing values (NaN) otherwise the method will fail. Either drop genes/cells containing missing values, or preferably replace them by 0.
+
+```{r}
+# load dataset:
+# genes with mean expression < 1 (and those that are all zero) have been removed
+data_FIB = read.csv("C:/Users/willi/Documents/ProjectPaper/M5R/Interaction/Real-Data/Datasets/GSE151334_FIB_counts_thresh.csv", row.names=1)
+
+# display
+head(data_FIB, 5)
+```
+
+```{r}
+# estimate beta (capture efficiency)
+BETA_FIB <- bayNorm::BetaFun(Data=data_FIB, MeanBETA = 0.1)
+
+# display
+summary(BETA_FIB$BETA)
+```
+
+## MAP counts
+
+```{r}
+# MAP of posterior for each data  entry
+bayNorm_2D_FIB <- bayNorm(
+    Data = data_FIB,
+    BETA_vec = NULL,
+    mode_version= TRUE,
+    mean_version = FALSE,
+    verbose = TRUE,
+    parallel = TRUE)
+```
+
+```{r}
+# extract MAP counts
+MAP_FIB <- data.frame(bayNorm_2D_FIB$Bay_out)
+
+# display
+head(MAP_FIB, 5)
+```
+
+```{r}
+# store
+write.csv(MAP_FIB, "C:/Users/willi/Documents/ProjectPaper/M5R/Interaction/Real-Data/Datasets/GSE151334_FIB_counts_MAP.csv")
+```
+
+```{r}
+# first gene
+par(mfrow=c(2,2))
+# histogram of observed counts
+hist(as.numeric(data_FIB[1,]), breaks=10, main="Observed Counts",
+     xlab = "transcript count")
+hist(as.numeric(data_FIB[1,]), breaks=100, main="Observed Counts",
+     xlab = "transcript count")
+# histogram of MAP counts
+hist(as.numeric(MAP_FIB[1,]), breaks=10, main="MAP Count Estimates",
+     xlab = "transcript count")
+hist(as.numeric(MAP_FIB[1,]), breaks=100, main="MAP Count Estimates",
+     xlab = "transcript count")
+```
+
+## Posterior Mean counts
+
+```{r}
+# Mean of posterior for each data entry
+bayNorm_2D_FIB_MEAN <- bayNorm(
+    Data = data_FIB,
+    BETA_vec = NULL,
+    mode_version= FALSE,
+    mean_version = TRUE,
+    verbose = TRUE,
+    parallel = TRUE)
+```
+
+```{r}
+# extract PM counts
+MEAN_FIB <- data.frame(bayNorm_2D_FIB_MEAN$Bay_out)
+
+# display
+head(MEAN_FIB, 5)
+```
+
+```{r}
+# store
+write.csv(MEAN_FIB, "C:/Users/willi/Documents/ProjectPaper/M5R/Interaction/Real-Data/Datasets/GSE151334_FIB_counts_MEAN.csv")
+```
+
+```{r}
+# first gene
+par(mfrow=c(2,2))
+# histogram of observed counts
+hist(as.numeric(data_FIB[1,]), breaks=10, main="Observed Counts",
+     xlab = "transcript count")
+hist(as.numeric(data_FIB[1,]), breaks=100, main="Observed Counts",
+     xlab = "transcript count")
+# histogram of MAP counts
+hist(as.numeric(MEAN_FIB[1,]), breaks=10, main="MEAN Count Estimates",
+     xlab = "transcript count")
+hist(as.numeric(MEAN_FIB[1,]), breaks=100, main="MEAN Count Estimates",
+     xlab = "transcript count")
+```
+
+## Posterior Sample counts
+
+```{r}
+# S = 20 samples from posterior for each data  entry
+bayNorm_3D_FIB <- bayNorm(
+    Data=data_FIB,
+    BETA_vec = NULL,
+    mode_version=FALSE,
+    mean_version = FALSE,
+    S = 20,
+    verbose =TRUE,
+    parallel = TRUE)
+```
+```{r}
+# extract counts
+PS_FIB <- data.frame(bayNorm_3D_FIB$Bay_out)
+
+# new sample sizes
+print(dim(PS_FIB))
+
+# display
+head(PS_FIB, 5)
+```
+```{r}
+# store
+write.csv(PS_FIB, "C:/Users/willi/Documents/ProjectPaper/M5R/Interaction/Real-Data/Datasets/GSE151334_FIB_counts_PS.csv")
+```
+
+```{r}
+# gene
+par(mfrow=c(2,2))
+j <- 1484
+# histogram of observed counts
+hist(as.numeric(data_FIB[j,]), breaks=10, main="Observed Counts",
+     xlab = "transcript count")
+# histogram of MAP counts
+hist(as.numeric(MAP_FIB[j,]), breaks=100, main="MAP Count Estimates",
+     xlab = "transcript count")
+# histogram of posterior sample counts
+hist(as.numeric(PS_FIB[j,]), breaks=100, main="Posterior Sample Counts",
+     xlab = "transcript count")
+hist(1)
+```
+
+
+
+
+
+
+
+
