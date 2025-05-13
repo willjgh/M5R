@@ -42,8 +42,8 @@ NTRK3	ENST00000394480.2	neurotrophic tyrosine kinase, receptor, type 3 	7	1	1	0	
 TMEM30A	ENST00000230461.6	transmembrane protein 30A 	1221	1	0	0	1	0	0	0	0	0	hsa-miR-99a-5p	0.0182	0.1203	0.5026	-0.44	-0.44	0.13	NULL
 SMPDL3B	ENST00000373894.3	sphingomyelin phosphodiesterase, acid-like 3B 	97	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0044	0.0317	0.1948	-0.43	-0.43	< 0.1	NULL
 RASGRP3	ENST00000402538.3	RAS guanyl releasing protein 3 (calcium and DAG-regulated) 	24	1	0	1	0	0	0	0	0	0	hsa-miR-100-5p	0.0125	0.0857	0.4091	-0.42	-0.42	0.15	NULL
-SPN	ENST00000360121.3	sialophorin 	5	0	0	0	0	1	1	0	0	0	hsa-miR-99a-5p	0.0351	0.2119	0.6652	-0.42	-0.42	< 0.1	NULL
 PNLIPRP3	ENST00000369230.3	pancreatic lipase-related protein 3 	5	0	0	0	0	1	0	1	0	0	hsa-miR-99b-5p	0.0272	0.1712	0.6042	-0.42	-0.42	< 0.1	NULL
+SPN	ENST00000360121.3	sialophorin 	5	0	0	0	0	1	1	0	0	0	hsa-miR-99a-5p	0.0351	0.2119	0.6652	-0.42	-0.42	< 0.1	NULL
 KRTAP4-9	ENST00000391415.1	keratin associated protein 4-9 	10	0	0	0	0	2	1	1	0	0	hsa-miR-99b-5p	0.0467	0.2562	0.7020	-0.42	-0.97	< 0.1	NULL
 RP11-116D17.1	ENST00000547948.1	HCG2038717; Uncharacterized protein  	5	0	0	0	0	1	0	0	1	0	hsa-miR-99a-5p	0.0138	0.0939	0.4338	-0.42	-0.42	< 0.1	NULL
 CLDN11	ENST00000064724.3	claudin 11 	1116	1	0	1	0	0	0	0	0	0	hsa-miR-100-5p	0.0124	0.0850	0.4065	-0.42	-0.42	0.12	2009, 2011
@@ -94,8 +94,277 @@ INSM1	ENST00000310227.1	insulinoma-associated 1 	20	1	0	1	0	0	0	0	0	0	hsa-miR-99
 C1orf109	ENST00000358011.4	chromosome 1 open reading frame 109 	6	0	0	0	0	1	0	0	1	0	hsa-miR-99a-5p	0.0039	0.0279	0.1749	-0.35	-0.35	< 0.1	NULL
 RRN3	ENST00000198767.6	RRN3 RNA polymerase I transcription factor homolog (S. cerevisiae) 	470	0	0	0	0	1	0	1	0	0	hsa-miR-99a-5p	0.0250	0.1594	0.5836	-0.35	-0.35	< 0.1	NULL
 PODXL	ENST00000541194.1	podocalyxin-like 	2928	0	0	0	0	1	0	1	0	0	hsa-miR-99a-5p	0.0233	0.1496	0.5612	-0.35	-0.35	< 0.1	NULL
-XXYLT1	ENST00000310380.6	xyloside xylosyltransferase 1 	1052	0	0	0	0	1	0	0	1	0	hsa-miR-99a-5p	0.0039	0.0279	0.1748	-0.35	-0.35	< 0.1	NULL
 ZFYVE19	ENST00000355341.4	zinc finger, FYVE domain containing 19 	200	0	0	0	0	1	0	1	0	0	hsa-miR-99a-5p	0.0127	0.0870	0.4133	-0.35	-0.35	< 0.1	NULL
+XXYLT1	ENST00000310380.6	xyloside xylosyltransferase 1 	1052	0	0	0	0	1	0	0	1	0	hsa-miR-99a-5p	0.0039	0.0279	0.1748	-0.35	-0.35	< 0.1	NULL
 USP51	ENST00000500968.3	ubiquitin specific peptidase 51 	26	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0120	0.0826	0.4135	-0.34	-0.34	< 0.1	NULL
 CEP85	ENST00000252992.4	centrosomal protein 85kDa 	471	1	0	0	1	0	0	0	0	0	hsa-miR-99a-5p	0.0167	0.1116	0.4813	-0.34	-0.34	0.14	2007, 2009, 2011
 MBNL1	ENST00000357472.3	muscleblind-like splicing regulator 1 	135	1	0	1	0	0	0	0	0	0	hsa-miR-99a-5p	0.0290	0.1806	0.6196	-0.34	-0.34	0.26	2005, 2007, 2009, 2011
+DFFB	ENST00000378209.3	DNA fragmentation factor, 40kDa, beta polypeptide (caspase-activated DNase) 	55	0	0	0	0	1	0	1	0	0	hsa-miR-99b-5p	0.0220	0.1432	0.5678	-0.34	-0.34	< 0.1	NULL
+IFIT2	ENST00000371826.3	interferon-induced protein with tetratricopeptide repeats 2 	9	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0077	0.0541	0.2970	-0.34	-0.34	< 0.1	NULL
+PTK6	ENST00000217185.2	protein tyrosine kinase 6 	27	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0310	0.1846	0.5580	-0.33	-0.42	< 0.1	NULL
+AC005481.5	ENST00000409610.1	Uncharacterized protein  	5	0	0	0	0	1	0	0	1	0	hsa-miR-99a-5p	0.0049	0.0352	0.2124	-0.33	-0.33	< 0.1	NULL
+LHFPL2	ENST00000515007.2	lipoma HMGIC fusion partner-like 2 	16	0	0	0	0	1	0	0	1	0	hsa-miR-99a-5p	0.0057	0.0410	0.2399	-0.33	-0.33	< 0.1	NULL
+CYYR1	ENST00000299340.4	cysteine/tyrosine-rich 1 	5	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0030	0.0216	0.1402	-0.33	-0.33	< 0.1	NULL
+CKS1B	ENST00000308987.5	CDC28 protein kinase regulatory subunit 1B 	186	0	0	0	0	1	0	1	0	0	hsa-miR-99b-5p	0.0143	0.0947	0.4014	-0.33	-0.41	< 0.1	NULL
+POTEI	ENST00000451531.2	POTE ankyrin domain family, member I 	5	0	0	0	0	1	0	0	1	1	hsa-miR-99b-5p	0.0080	0.0570	0.3473	-0.33	-0.33	< 0.1	NULL
+KMO	ENST00000366559.4	kynurenine 3-monooxygenase (kynurenine 3-hydroxylase) 	5	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0118	0.0840	0.4856	-0.33	-0.33	< 0.1	NULL
+ANKRD28	ENST00000399451.2	ankyrin repeat domain 28 	798	0	0	0	0	1	0	1	0	0	hsa-miR-99b-5p	0.0347	0.2090	0.6528	-0.32	-0.33	< 0.1	NULL
+C1orf115	ENST00000294889.5	chromosome 1 open reading frame 115 	180	0	0	0	0	1	0	0	1	0	hsa-miR-99b-5p	0.0112	0.0769	0.3694	-0.32	-0.36	< 0.1	NULL
+TFCP2L1	ENST00000263707.5	transcription factor CP2-like 1 	36	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0117	0.0817	0.4255	-0.32	-0.32	< 0.1	NULL
+CXCL16	ENST00000293778.6	chemokine (C-X-C motif) ligand 16 	385	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0172	0.1144	0.4837	-0.32	-0.33	< 0.1	NULL
+SMARCD1	ENST00000394963.4	SWI/SNF related, matrix associated, actin dependent regulator of chromatin, subfamily d, member 1 	952	1	0	0	1	0	0	0	0	0	hsa-miR-99b-5p	0.0109	0.0755	0.3838	-0.32	-0.33	0.14	2007, 2009, 2011
+UBXN10	ENST00000375099.3	UBX domain protein 10 	5	0	0	0	0	1	0	0	1	1	hsa-miR-99a-5p	0.0096	0.0688	0.4071	-0.32	-0.32	< 0.1	NULL
+COL4A3BP	ENST00000380494.5	collagen, type IV, alpha 3 (Goodpasture antigen) binding protein 	134	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0079	0.0552	0.2913	-0.32	-0.37	< 0.1	NULL
+LAMA5	ENST00000252999.3	laminin, alpha 5 	267	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0152	0.1031	0.4765	-0.32	-0.32	< 0.1	NULL
+FAM64A	ENST00000570337.2	family with sequence similarity 64, member A 	392	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0045	0.0320	0.1959	-0.32	-0.32	< 0.1	NULL
+ZNF496	ENST00000294753.4	zinc finger protein 496 	391	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0108	0.0749	0.3801	-0.32	-0.33	< 0.1	NULL
+NXF1	ENST00000531709.2	nuclear RNA export factor 1 	1017	1	0	0	1	0	0	0	0	0	hsa-miR-100-5p	0.0056	0.0402	0.2364	-0.32	-0.32	0.15	2009, 2011
+FRMD1	ENST00000283309.6	FERM domain containing 1 	5	0	0	0	0	1	0	0	1	1	hsa-miR-99b-5p	0.0086	0.0617	0.3807	-0.32	-0.32	< 0.1	NULL
+TBKBP1	ENST00000361722.3	TBK1 binding protein 1 	173	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0052	0.0375	0.2313	-0.32	-0.32	< 0.1	NULL
+MUC3A	ENST00000319509.7	mucin 3A, cell surface associated 	20	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0028	0.0204	0.1334	-0.31	-0.31	< 0.1	NULL
+SRRM3	ENST00000326382.8	serine/arginine repetitive matrix 3 	16	0	0	0	0	1	0	1	0	2	hsa-miR-99a-5p	0.0105	0.0756	0.4696	-0.31	-0.31	< 0.1	NULL
+THAP6	ENST00000311638.3	THAP domain containing 6 	24	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0070	0.0492	0.2609	-0.31	-0.40	< 0.1	NULL
+LMLN	ENST00000330198.4	leishmanolysin-like (metallopeptidase M8 family) 	18	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0102	0.0705	0.3590	-0.31	-0.31	< 0.1	NULL
+ZFAT	ENST00000429442.2	zinc finger and AT hook domain containing 	120	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0151	0.1019	0.4560	-0.31	-0.31	< 0.1	NULL
+CHRM2	ENST00000445907.2	cholinergic receptor, muscarinic 2 	5	0	0	0	0	1	0	0	1	0	hsa-miR-99a-5p	0.0063	0.0450	0.2581	-0.31	-0.31	< 0.1	NULL
+AIPL1	ENST00000381129.3	aryl hydrocarbon receptor interacting protein-like 1 	5	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0034	0.0246	0.1573	-0.30	-0.30	< 0.1	NULL
+RCBTB1	ENST00000258646.3	regulator of chromosome condensation (RCC1) and BTB (POZ) domain containing protein 1 	9	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0156	0.1054	0.4768	-0.30	-0.30	< 0.1	NULL
+PRDM1	ENST00000369089.3	PR domain containing 1, with ZNF domain 	48	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0105	0.0731	0.3825	-0.30	-0.39	< 0.1	2005, 2007
+RASSF4	ENST00000374417.2	Ras association (RalGDS/AF-6) domain family member 4 	515	0	0	0	0	1	0	1	0	0	hsa-miR-99a-5p	0.0108	0.0747	0.3728	-0.30	-0.30	< 0.1	NULL
+EFNB2	ENST00000245323.4	ephrin-B2 	25	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0103	0.0716	0.3696	-0.30	-0.30	< 0.1	NULL
+SLC44A1	ENST00000374720.3	solute carrier family 44 (choline transporter), member 1 	407	1	0	1	0	0	0	0	0	0	hsa-miR-100-5p	0.0253	0.1612	0.5868	-0.30	-0.30	0.28	2007, 2009, 2011
+SLC35F1	ENST00000360388.4	solute carrier family 35, member F1 	56	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0059	0.0422	0.2458	-0.30	-0.30	< 0.1	NULL
+CROCC	ENST00000375541.5	ciliary rootlet coiled-coil, rootletin 	136	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0038	0.0277	0.1823	-0.30	-0.30	< 0.1	NULL
+SNX8	ENST00000222990.3	sorting nexin 8 	303	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0096	0.0676	0.3656	-0.30	-0.33	< 0.1	NULL
+RAPH1	ENST00000319170.5	Ras association (RalGDS/AF-6) and pleckstrin homology domains 1 	126	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0101	0.0694	0.3441	-0.30	-0.34	< 0.1	NULL
+ETV3	ENST00000368192.4	ets variant 3 	37	1	0	1	0	0	0	0	0	0	hsa-miR-99a-5p	0.0171	0.1143	0.5028	-0.30	-0.30	0.18	NULL
+KDM6B	ENST00000254846.5	lysine (K)-specific demethylase 6B 	8	1	0	1	0	0	0	0	0	0	hsa-miR-99b-5p	0.0359	0.2219	0.7812	-0.30	-0.30	0.18	2007, 2011
+SRCIN1	ENST00000264659.7	SRC kinase signaling inhibitor 1 	5	0	0	0	0	1	0	0	1	1	hsa-miR-100-5p	0.0105	0.0745	0.4370	-0.30	-0.30	< 0.1	NULL
+E2F2	ENST00000361729.2	E2F transcription factor 2 	96	0	0	0	0	1	0	1	0	0	hsa-miR-99a-5p	0.0068	0.0481	0.2717	-0.30	-0.30	< 0.1	NULL
+NDST1	ENST00000261797.6	N-deacetylase/N-sulfotransferase (heparan glucosaminyl) 1 	13660	0	0	0	0	1	0	0	1	0	hsa-miR-99b-5p	0.0272	0.1714	0.6044	-0.30	-0.30	< 0.1	NULL
+UGCG	ENST00000374279.3	UDP-glucose ceramide glucosyltransferase 	1200	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0132	0.0896	0.4160	-0.30	-0.31	< 0.1	NULL
+ZNF197	ENST00000383745.2	zinc finger protein 197 	53	0	0	0	0	1	1	0	0	0	hsa-miR-100-5p	0.0134	0.0832	0.2809	-0.29	-0.77	< 0.1	2011
+PIAS4	ENST00000262971.2	protein inhibitor of activated STAT, 4 	521	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0100	0.0695	0.3633	-0.29	-0.29	< 0.1	NULL
+RASA2	ENST00000286364.3	RAS p21 protein activator 2 	170	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0093	0.0651	0.3399	-0.29	-0.29	< 0.1	NULL
+FAM163A	ENST00000341785.4	family with sequence similarity 163, member A 	23	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0090	0.0628	0.3313	-0.29	-0.29	< 0.1	NULL
+FOXJ3	ENST00000372571.1	forkhead box J3 	329	0	0	0	0	1	0	1	0	0	hsa-miR-99b-5p	0.0164	0.1097	0.4716	-0.29	-0.30	< 0.1	NULL
+HIST1H3F	ENST00000446824.2	histone cluster 1, H3f 	22	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0090	0.0620	0.3032	-0.29	-0.38	< 0.1	NULL
+NIPAL2	ENST00000341166.3	NIPA-like domain containing 2 	7	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0144	0.0973	0.4481	-0.29	-0.29	< 0.1	NULL
+GDF11	ENST00000257868.5	growth differentiation factor 11 	847	0	0	0	0	1	0	1	0	0	hsa-miR-99a-5p	0.0059	0.0422	0.2407	-0.28	-0.31	< 0.1	NULL
+MAPRE2	ENST00000436190.2	microtubule-associated protein, RP/EB family, member 2 	361	0	0	0	0	1	0	1	0	0	hsa-miR-99b-5p	0.0062	0.0444	0.2555	-0.28	-0.28	< 0.1	NULL
+NEU3	ENST00000532963.1	sialidase 3 (membrane sialidase) 	243	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0057	0.0406	0.2374	-0.28	-0.29	< 0.1	NULL
+VSTM5	ENST00000409977.1	V-set and transmembrane domain containing 5 	5	0	0	0	0	1	0	0	1	0	hsa-miR-99b-5p	0.0084	0.0591	0.3171	-0.28	-0.28	< 0.1	NULL
+GPR56	ENST00000388812.4	G protein-coupled receptor 56 	44	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0058	0.0413	0.2414	-0.28	-0.28	< 0.1	NULL
+CPNE5	ENST00000244751.2	copine V 	13	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0073	0.0515	0.2862	-0.28	-0.28	< 0.1	NULL
+LIF	ENST00000403987.3	leukemia inhibitory factor 	55	0	0	0	0	1	0	1	0	0	hsa-miR-99a-5p	0.0144	0.0981	0.4711	-0.28	-0.31	< 0.1	NULL
+CD93	ENST00000246006.4	CD93 molecule 	5	0	0	0	0	1	0	1	0	0	hsa-miR-99b-5p	0.0257	0.1656	0.6456	-0.28	-0.28	< 0.1	NULL
+INPP5E	ENST00000371712.3	inositol polyphosphate-5-phosphatase, 72 kDa 	105	0	0	0	0	1	0	0	1	0	hsa-miR-99a-5p	0.0052	0.0372	0.2221	-0.28	-0.28	< 0.1	NULL
+RRAGD	ENST00000369415.4	Ras-related GTP binding D 	644	1	0	1	0	1	0	1	0	0	hsa-miR-100-5p	0.0196	0.1240	0.4459	-0.27	-0.62	0.19	2011
+NT5DC3	ENST00000392876.3	5'-nucleotidase domain containing 3 	235	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0164	0.1116	0.5265	-0.27	-0.27	< 0.1	NULL
+DDX26B	ENST00000370752.4	DEAD/H (Asp-Glu-Ala-Asp/His) box polypeptide 26B 	289	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0048	0.0343	0.2078	-0.27	-0.27	< 0.1	NULL
+NLRC3	ENST00000448023.2	NLR family, CARD domain containing 3 	5	0	0	0	0	1	0	0	1	0	hsa-miR-99b-5p	0.0100	0.0695	0.3592	-0.27	-0.27	< 0.1	NULL
+NEBL	ENST00000377122.4	nebulette 	181	0	0	0	0	1	0	1	0	1	hsa-miR-100-5p	0.0109	0.0774	0.4429	-0.27	-0.28	< 0.1	NULL
+ABHD17A	ENST00000590661.1	abhydrolase domain containing 17A 	202	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0138	0.0960	0.4999	-0.27	-0.28	< 0.1	NULL
+TNFAIP8L1	ENST00000327473.4	tumor necrosis factor, alpha-induced protein 8-like 1 	603	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0184	0.1215	0.5085	-0.27	-0.29	< 0.1	NULL
+SALL4	ENST00000217086.4	sal-like 4 (Drosophila) 	155	0	0	0	0	1	0	0	1	0	hsa-miR-99b-5p	0.0109	0.0775	0.4624	-0.27	-0.28	< 0.1	NULL
+SLC8A2	ENST00000236877.6	solute carrier family 8 (sodium/calcium exchanger), member 2 	5	0	0	0	0	1	0	1	0	0	hsa-miR-99a-5p	0.0146	0.0990	0.4634	-0.27	-0.27	< 0.1	NULL
+ASB7	ENST00000332783.7	ankyrin repeat and SOCS box containing 7 	95	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0023	0.0165	0.1101	-0.27	-0.27	< 0.1	NULL
+ZZEF1	ENST00000381638.2	zinc finger, ZZ-type with EF-hand domain 1 	83	1	0	1	0	0	0	0	0	0	hsa-miR-100-5p	0.0330	0.1906	0.5374	-0.27	-0.37	0.28	2005, 2007, 2009, 2011
+TRIM71	ENST00000383763.5	tripartite motif containing 71, E3 ubiquitin protein ligase 	67	1	0	1	0	0	0	0	0	1	hsa-miR-99a-5p	0.0409	0.2475	0.8553	-0.27	-0.41	0.28	NULL
+GPRC5B	ENST00000300571.2	G protein-coupled receptor, family C, group 5, member B 	84	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0082	0.0573	0.3100	-0.27	-0.27	< 0.1	NULL
+PTPRN2	ENST00000389413.3	protein tyrosine phosphatase, receptor type, N polypeptide 2 	15	0	0	0	0	1	0	1	0	0	hsa-miR-99a-5p	0.0117	0.0821	0.4456	-0.26	-0.26	< 0.1	NULL
+MAN2A2	ENST00000360468.3	mannosidase, alpha, class 2A, member 2 	340	0	0	0	0	1	0	0	1	0	hsa-miR-99a-5p	0.0061	0.0431	0.2499	-0.26	-0.26	< 0.1	NULL
+GJA9	ENST00000454994.2	gap junction protein, alpha 9, 59kDa 	85	0	0	0	0	1	0	1	0	0	hsa-miR-99a-5p	0.0112	0.0761	0.3469	-0.26	-0.34	< 0.1	NULL
+ZCCHC12	ENST00000310164.2	zinc finger, CCHC domain containing 12 	217	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0068	0.0481	0.2718	-0.26	-0.26	< 0.1	NULL
+IKZF4	ENST00000262032.5	IKAROS family zinc finger 4 (Eos) 	329	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0030	0.0220	0.1420	-0.26	-0.27	< 0.1	NULL
+MBD3	ENST00000590550.2	methyl-CpG binding domain protein 3 	393	0	0	0	0	1	0	1	0	1	hsa-miR-100-5p	0.0123	0.0864	0.4823	-0.26	-0.26	< 0.1	NULL
+GET4	ENST00000407192.1	golgi to ER traffic protein 4 homolog (S. cerevisiae) 	532	0	0	0	0	1	1	0	0	0	hsa-miR-99b-5p	0.0083	0.0562	0.2642	-0.26	-0.45	< 0.1	NULL
+SP8	ENST00000418710.2	Sp8 transcription factor 	95	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0064	0.0459	0.2818	-0.25	-0.27	< 0.1	NULL
+RASA3	ENST00000334062.7	RAS p21 protein activator 3 	612	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0161	0.1081	0.4725	-0.25	-0.25	< 0.1	NULL
+HCAR3	ENST00000528880.2	hydroxycarboxylic acid receptor 3 	5	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0028	0.0203	0.1327	-0.25	-0.25	< 0.1	NULL
+TMEM236	ENST00000480516.1		5	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0019	0.0139	0.0942	-0.25	-0.25	< 0.1	NULL
+TMEM236	ENST00000377495.1	transmembrane protein 236 	5	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0019	0.0139	0.0942	-0.25	-0.25	< 0.1	NULL
+CYP26B1	ENST00000001146.2	cytochrome P450, family 26, subfamily B, polypeptide 1 	1315	1	0	1	0	0	0	0	0	0	hsa-miR-100-5p	0.0174	0.1157	0.4917	-0.25	-0.25	0.25	2005, 2007, 2009, 2011
+GPR55	ENST00000392040.1	G protein-coupled receptor 55 	5	0	0	0	0	1	0	1	0	0	hsa-miR-99b-5p	0.0370	0.2212	0.6773	-0.25	-0.25	< 0.1	NULL
+C17orf96	ENST00000325814.5	chromosome 17 open reading frame 96 	19	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0013	0.0095	0.0662	-0.25	-0.25	< 0.1	NULL
+ATP2B4	ENST00000367218.3	ATPase, Ca++ transporting, plasma membrane 4 	7311	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0059	0.0422	0.2453	-0.25	-0.25	< 0.1	NULL
+WDR52	ENST00000393845.2	WD repeat domain 52 	5	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0081	0.0578	0.3497	-0.24	-0.24	< 0.1	NULL
+SCNN1G	ENST00000300061.2	sodium channel, non-voltage-gated 1, gamma subunit 	5	0	0	0	0	1	0	1	0	0	hsa-miR-99a-5p	0.0097	0.0684	0.3885	-0.24	-0.24	< 0.1	NULL
+HLA-DOA	ENST00000229829.5	major histocompatibility complex, class II, DO alpha 	7	0	0	0	0	1	0	1	0	0	hsa-miR-99a-5p	0.0110	0.0763	0.3929	-0.24	-0.24	< 0.1	NULL
+CACNG7	ENST00000391767.1	calcium channel, voltage-dependent, gamma subunit 7 	5	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0052	0.0379	0.2486	-0.24	-0.24	< 0.1	NULL
+HIP1	ENST00000336926.6	huntingtin interacting protein 1 	37	0	0	0	0	1	0	1	0	2	hsa-miR-99a-5p	0.0222	0.1520	0.7340	-0.24	-0.32	< 0.1	NULL
+CDYL2	ENST00000570137.2	chromodomain protein, Y-like 2 	239	1	0	1	0	0	0	0	0	0	hsa-miR-99b-5p	0.0460	0.2460	0.6030	-0.24	-0.32	0.28	NULL
+FBXL4	ENST00000369244.2	F-box and leucine-rich repeat protein 4 	321	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0141	0.0930	0.3938	-0.24	-0.36	< 0.1	NULL
+GRM6	ENST00000231188.5	glutamate receptor, metabotropic 6 	5	0	0	0	0	1	0	0	1	0	hsa-miR-99a-5p	0.0042	0.0303	0.2008	-0.23	-0.23	< 0.1	NULL
+NAA30	ENST00000556492.1	N(alpha)-acetyltransferase 30, NatC catalytic subunit 	418	0	0	0	0	1	0	0	1	0	hsa-miR-99a-5p	0.0054	0.0385	0.2168	-0.23	-0.33	< 0.1	NULL
+ZNF106	ENST00000263805.4	zinc finger protein 106 	406	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0057	0.0409	0.2444	-0.23	-0.24	< 0.1	NULL
+FAM49A	ENST00000381323.3	family with sequence similarity 49, member A 	38	0	0	0	0	1	0	1	0	0	hsa-miR-99b-5p	0.0321	0.1857	0.5283	-0.23	-0.31	< 0.1	NULL
+LURAP1	ENST00000371980.3	leucine rich adaptor protein 1 	20	0	0	0	0	1	0	1	0	0	hsa-miR-99b-5p	0.0046	0.0327	0.1922	-0.22	-0.28	< 0.1	NULL
+CPEB2	ENST00000538197.1	cytoplasmic polyadenylation element binding protein 2 	367	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0055	0.0401	0.2576	-0.22	-0.24	< 0.1	NULL
+C3orf67	ENST00000491845.1	chromosome 3 open reading frame 67 	50	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0132	0.0853	0.3280	-0.22	-0.40	< 0.1	NULL
+HSD3B7	ENST00000353250.5	hydroxy-delta-5-steroid dehydrogenase, 3 beta- and steroid delta-isomerase 7 	173	0	0	0	0	1	0	1	0	0	hsa-miR-99b-5p	0.0096	0.0671	0.3472	-0.22	-0.22	< 0.1	NULL
+SAE1	ENST00000392776.3	SUMO1 activating enzyme subunit 1 	87	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0044	0.0317	0.1929	-0.22	-0.23	< 0.1	NULL
+EFCAB6	ENST00000356087.4	EF-hand calcium binding domain 6 	23	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0049	0.0349	0.2003	-0.22	-0.29	< 0.1	NULL
+DPY19L3	ENST00000586987.1	dpy-19-like 3 (C. elegans) 	146	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0085	0.0590	0.2933	-0.22	-0.29	< 0.1	NULL
+IGF1R	ENST00000268035.6	insulin-like growth factor 1 receptor 	561	1	1	0	0	0	0	0	0	0	hsa-miR-99b-5p	0.0396	0.2148	0.5354	-0.22	-0.32	< 0.1	2007, 2009, 2011
+TAOK1	ENST00000261716.3	TAO kinase 1 	164	1	1	0	0	0	0	0	0	0	hsa-miR-100-5p	0.0145	0.0970	0.4270	-0.21	-0.24	< 0.1	2011
+SKI	ENST00000378536.4	v-ski avian sarcoma viral oncogene homolog 	613	0	0	0	0	1	0	0	1	0	hsa-miR-99b-5p	0.0062	0.0443	0.2551	-0.21	-0.21	< 0.1	NULL
+PTPN11	ENST00000351677.2	protein tyrosine phosphatase, non-receptor type 11 	52	0	0	0	0	1	0	0	1	0	hsa-miR-99a-5p	0.0027	0.0195	0.1280	-0.21	-0.21	< 0.1	NULL
+GAD2	ENST00000376261.3	glutamate decarboxylase 2 (pancreatic islets and brain, 65kDa) 	5	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0036	0.0257	0.1631	-0.21	-0.21	< 0.1	NULL
+GNL3L	ENST00000336470.4	guanine nucleotide binding protein-like 3 (nucleolar)-like 	151	0	0	0	0	1	0	1	0	0	hsa-miR-99a-5p	0.0165	0.1063	0.4072	-0.21	-0.30	< 0.1	NULL
+ST6GAL2	ENST00000361686.4	ST6 beta-galactosamide alpha-2,6-sialyltranferase 2 	5	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0081	0.0572	0.3097	-0.21	-0.21	< 0.1	NULL
+PCDH7	ENST00000543491.1	protocadherin 7 	95	0	0	0	0	1	0	1	0	0	hsa-miR-99a-5p	0.0117	0.0826	0.4656	-0.21	-0.21	< 0.1	NULL
+PAPD7	ENST00000230859.6	PAP associated domain containing 7 	3195	0	0	0	0	1	0	1	0	0	hsa-miR-99b-5p	0.0150	0.1014	0.4642	-0.20	-0.21	< 0.1	NULL
+LPPR4	ENST00000370185.3	Lipid phosphate phosphatase-related protein type 4  	5	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0135	0.0919	0.4278	-0.20	-0.20	< 0.1	NULL
+SMEK2	ENST00000272313.5	SMEK homolog 2, suppressor of mek1 (Dictyostelium) 	342	0	0	0	0	1	0	1	0	0	hsa-miR-99a-5p	0.0054	0.0384	0.2279	-0.20	-0.20	< 0.1	NULL
+CEP170B	ENST00000414716.3	centrosomal protein 170B 	326	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0115	0.0796	0.4033	-0.19	-0.19	< 0.1	NULL
+TMEM87B	ENST00000283206.4	transmembrane protein 87B 	219	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0066	0.0467	0.2542	-0.19	-0.23	< 0.1	NULL
+PEX5L	ENST00000467460.1	peroxisomal biogenesis factor 5-like 	5	0	0	0	0	1	0	1	0	0	hsa-miR-99a-5p	0.0106	0.0737	0.3701	-0.19	-0.19	< 0.1	NULL
+PCYT1A	ENST00000292823.2	phosphate cytidylyltransferase 1, choline, alpha 	731	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0026	0.0190	0.1220	-0.19	-0.23	< 0.1	NULL
+PIP5KL1	ENST00000388747.4	phosphatidylinositol-4-phosphate 5-kinase-like 1 	12	0	0	0	0	1	0	0	1	0	hsa-miR-99b-5p	0.0049	0.0345	0.1924	-0.18	-0.30	< 0.1	NULL
+SORL1	ENST00000260197.7	sortilin-related receptor, L(DLR class) A repeats containing 	40	0	0	0	0	1	1	0	0	0	hsa-miR-100-5p	0.0194	0.1257	0.5138	-0.18	-0.26	< 0.1	NULL
+XKR7	ENST00000562532.2	XK, Kell blood group complex subunit-related family, member 7 	5	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0118	0.0812	0.3952	-0.17	-0.17	< 0.1	NULL
+UHRF1BP1L	ENST00000279907.7	UHRF1 binding protein 1-like 	369	0	0	0	0	1	0	0	1	0	hsa-miR-99b-5p	0.0137	0.0916	0.4194	-0.17	-0.32	< 0.1	NULL
+ZNF510	ENST00000375231.1	zinc finger protein 510 	40	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0042	0.0295	0.1583	-0.17	-0.35	< 0.1	NULL
+MSANTD3	ENST00000395067.2	Myb/SANT-like DNA-binding domain containing 3 	78	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0037	0.0259	0.1450	-0.16	-0.33	< 0.1	NULL
+CLCN6	ENST00000312413.6	chloride channel, voltage-sensitive 6 	227	0	0	0	0	1	0	1	0	0	hsa-miR-99a-5p	0.0177	0.1204	0.5702	-0.16	-0.16	< 0.1	NULL
+ERGIC1	ENST00000393784.3	endoplasmic reticulum-golgi intermediate compartment (ERGIC) 1 	4614	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0057	0.0407	0.2386	-0.16	-0.16	< 0.1	NULL
+STAT5B	ENST00000293328.3	signal transducer and activator of transcription 5B 	329	0	0	0	0	1	1	0	0	0	hsa-miR-99a-5p	0.0082	0.0537	0.2176	-0.16	-0.42	< 0.1	NULL
+SETD1B	ENST00000267197.5	SET domain containing 1B 	703	0	0	0	0	1	0	1	0	0	hsa-miR-99b-5p	0.0235	0.1568	0.6961	-0.16	-0.16	< 0.1	2011
+AC002472.13	ENST00000543388.1	Leucine-rich repeat-containing protein LOC400891  	5	0	0	0	0	1	0	1	0	1	hsa-miR-99a-5p	0.0033	0.0236	0.1504	-0.16	-0.53	< 0.1	NULL
+PGR	ENST00000325455.5	progesterone receptor 	8	0	0	0	0	1	0	0	1	0	hsa-miR-99b-5p	0.0095	0.0640	0.2861	-0.15	-0.25	< 0.1	NULL
+ARID3B	ENST00000346246.5	AT rich interactive domain 3B (BRIGHT-like) 	11	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0030	0.0216	0.1401	-0.15	-0.15	< 0.1	NULL
+ONECUT2	ENST00000491143.2	one cut homeobox 2 	847	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0065	0.0460	0.2596	-0.15	-0.28	< 0.1	NULL
+IREB2	ENST00000258886.8	iron-responsive element binding protein 2 	1096	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0067	0.0483	0.2983	-0.14	-0.21	< 0.1	NULL
+GAN	ENST00000568107.2	gigaxonin 	185	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0080	0.0550	0.2803	-0.14	-0.24	< 0.1	NULL
+YIPF6	ENST00000462683.1	Yip1 domain family, member 6 	888	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0020	0.0145	0.0887	-0.14	-0.32	< 0.1	NULL
+F11R	ENST00000368026.6	F11 receptor 	2844	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0053	0.0371	0.2004	-0.13	-0.21	< 0.1	NULL
+KCNJ5	ENST00000529694.1	potassium inwardly-rectifying channel, subfamily J, member 5 	12	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0035	0.0246	0.1430	-0.13	-0.23	< 0.1	NULL
+GOLGA3	ENST00000204726.3	golgin A3 	944	0	0	0	0	1	0	1	0	0	hsa-miR-99a-5p	0.0077	0.0543	0.2947	-0.13	-0.14	< 0.1	NULL
+C2orf48	ENST00000381786.3	chromosome 2 open reading frame 48 	32	0	0	0	0	1	0	0	1	1	hsa-miR-100-5p	0.0039	0.0275	0.1580	-0.13	-0.39	< 0.1	NULL
+FIGN	ENST00000333129.3	fidgetin 	10	0	0	0	0	1	0	0	1	0	hsa-miR-99a-5p	0.0056	0.0387	0.1937	-0.12	-0.25	< 0.1	NULL
+LPP	ENST00000312675.4	LIM domain containing preferred translocation partner in lipoma 	1894	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0068	0.0481	0.2712	-0.12	-0.12	< 0.1	NULL
+NUTF2	ENST00000219169.4	nuclear transport factor 2 	222	0	0	0	0	1	0	1	0	0	hsa-miR-99b-5p	0.0051	0.0358	0.1879	-0.12	-0.22	< 0.1	NULL
+OTUD3	ENST00000375120.3	OTU domain containing 3 	438	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0071	0.0508	0.3057	-0.12	-0.12	< 0.1	NULL
+THAP2	ENST00000308086.2	THAP domain containing, apoptosis associated protein 2 	109	1	1	0	0	0	0	0	0	0	hsa-miR-100-5p	0.0044	0.0288	0.1114	-0.12	-0.70	< 0.1	2007, 2009, 2011
+SIAE	ENST00000263593.3	sialic acid acetylesterase 	22	0	0	0	0	1	1	0	0	0	hsa-miR-99b-5p	0.0086	0.0514	0.1565	-0.12	-0.59	< 0.1	NULL
+AGPAT4	ENST00000366911.5	1-acylglycerol-3-phosphate O-acyltransferase 4 	142	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0042	0.0304	0.1921	-0.12	-0.22	< 0.1	NULL
+KLF8	ENST00000468660.1	Kruppel-like factor 8 	8	0	0	0	0	1	0	1	0	0	hsa-miR-99a-5p	0.0039	0.0272	0.1374	-0.11	-0.32	< 0.1	NULL
+GOLGA7B	ENST00000370602.1	golgin A7 family, member B 	5	0	0	0	0	1	0	0	1	1	hsa-miR-99b-5p	0.0033	0.0240	0.1539	-0.11	-0.42	< 0.1	NULL
+EPC2	ENST00000258484.6	enhancer of polycomb homolog 2 (Drosophila) 	152	0	0	0	0	1	0	0	1	1	hsa-miR-100-5p	0.0041	0.0293	0.1790	-0.11	-0.46	< 0.1	NULL
+ITPRIP	ENST00000337478.1	inositol 1,4,5-trisphosphate receptor interacting protein 	1138	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0058	0.0411	0.2238	-0.10	-0.14	< 0.1	NULL
+SATB1	ENST00000338745.6	SATB homeobox 1 	312	1	1	0	0	0	0	0	0	0	hsa-miR-99b-5p	0.0166	0.0812	0.1714	-0.10	-0.57	< 0.1	NULL
+GATAD2B	ENST00000368655.4	GATA zinc finger domain containing 2B 	48	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0039	0.0277	0.1595	-0.10	-0.19	< 0.1	NULL
+CIRBP	ENST00000444172.2	cold inducible RNA binding protein 	4799	0	0	0	0	1	1	0	0	0	hsa-miR-99a-5p	0.0057	0.0364	0.1331	-0.10	-0.52	< 0.1	NULL
+SETX	ENST00000224140.5	senataxin 	270	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0019	0.0139	0.0878	-0.10	-0.24	< 0.1	NULL
+CYP20A1	ENST00000356079.4	cytochrome P450, family 20, subfamily A, polypeptide 1 	170	0	0	0	0	1	1	0	0	0	hsa-miR-100-5p	0.0066	0.0445	0.2095	-0.09	-0.24	< 0.1	NULL
+RALGAPA2	ENST00000202677.7	Ral GTPase activating protein, alpha subunit 2 (catalytic) 	24	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0018	0.0135	0.0937	-0.09	-0.11	< 0.1	NULL
+NCMAP	ENST00000374392.2	noncompact myelin associated protein 	17	0	0	0	0	1	0	1	0	0	hsa-miR-99b-5p	0.0079	0.0496	0.1755	-0.09	-0.33	< 0.1	NULL
+C19orf48	ENST00000598463.1	chromosome 19 open reading frame 48 	45	0	0	0	0	1	0	1	0	1	hsa-miR-100-5p	0.0048	0.0329	0.1692	-0.08	-0.38	< 0.1	NULL
+GNS	ENST00000418919.2	glucosamine (N-acetyl)-6-sulfatase 	2435	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0036	0.0258	0.1597	-0.08	-0.10	< 0.1	NULL
+TBRG1	ENST00000441174.3	transforming growth factor beta regulator 1 	275	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0012	0.0088	0.0540	-0.08	-0.32	< 0.1	NULL
+LARP4B	ENST00000316157.3	La ribonucleoprotein domain family, member 4B 	705	0	0	0	0	1	0	0	1	0	hsa-miR-99a-5p	0.0024	0.0172	0.0994	-0.08	-0.20	< 0.1	NULL
+KCNJ14	ENST00000391884.1	potassium inwardly-rectifying channel, subfamily J, member 14 	29	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0032	0.0229	0.1487	-0.08	-0.09	< 0.1	NULL
+PHC3	ENST00000495893.2	polyhomeotic homolog 3 (Drosophila) 	366	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0041	0.0291	0.1682	-0.08	-0.28	< 0.1	NULL
+ZNF417	ENST00000312026.5	zinc finger protein 417 	19	0	0	0	0	1	0	0	1	0	hsa-miR-99b-5p	0.0028	0.0196	0.0980	-0.08	-0.31	< 0.1	NULL
+BMPR2	ENST00000374574.2	bone morphogenetic protein receptor, type II (serine/threonine kinase) 	287	1	0	0	1	0	0	0	0	0	hsa-miR-100-5p	0.0027	0.0186	0.0913	-0.08	-0.35	0.15	2005, 2007, 2009, 2011
+ZNRF2	ENST00000323037.4	zinc and ring finger 2 	403	1	0	0	1	0	0	0	0	0	hsa-miR-100-5p	0.0018	0.0129	0.0685	-0.07	-0.40	0.15	2011
+UBE4A	ENST00000252108.3	ubiquitination factor E4A 	29	0	0	0	0	1	0	0	1	0	hsa-miR-99a-5p	0.0012	0.0084	0.0514	-0.07	-0.32	< 0.1	NULL
+RBM19	ENST00000545145.2	RNA binding motif protein 19 	217	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0026	0.0190	0.1262	-0.07	-0.07	< 0.1	NULL
+HSD17B13	ENST00000302219.6	hydroxysteroid (17-beta) dehydrogenase 13 	11	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0012	0.0089	0.0585	-0.06	-0.14	< 0.1	NULL
+NDUFA7	ENST00000301457.2	NADH dehydrogenase (ubiquinone) 1 alpha subcomplex, 7, 14.5kDa 	550	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0019	0.0135	0.0792	-0.06	-0.18	< 0.1	NULL
+ICMT	ENST00000343813.5	isoprenylcysteine carboxyl methyltransferase 	558	1	0	1	0	0	0	0	0	0	hsa-miR-99a-5p	0.0052	0.0330	0.1163	-0.06	-0.32	< 0.1	2005, 2007, 2009, 2011
+FOXO3	ENST00000343882.6	forkhead box O3 	32	0	0	0	0	1	0	1	0	0	hsa-miR-99b-5p	0.0087	0.0611	0.3246	-0.05	-0.05	< 0.1	NULL
+ZFYVE20	ENST00000253699.3	zinc finger, FYVE domain containing 20 	57	0	0	0	0	1	0	1	0	1	hsa-miR-100-5p	0.0026	0.0187	0.1059	-0.05	-0.28	< 0.1	NULL
+TNFRSF13C	ENST00000291232.3	tumor necrosis factor receptor superfamily, member 13C 	36	0	0	0	0	1	0	1	0	1	hsa-miR-99a-5p	0.0045	0.0289	0.1123	-0.05	-0.31	< 0.1	NULL
+WBP11	ENST00000261167.2	WW domain binding protein 11 	130	0	0	0	0	1	0	1	0	0	hsa-miR-99a-5p	0.0032	0.0209	0.0861	-0.05	-0.35	< 0.1	NULL
+KDM5A	ENST00000399788.2	lysine (K)-specific demethylase 5A 	118	0	0	0	0	1	0	0	1	1	hsa-miR-99a-5p	0.0035	0.0250	0.1396	-0.05	-0.21	< 0.1	NULL
+PDLIM4	ENST00000379018.3	PDZ and LIM domain 4 	417	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0014	0.0101	0.0680	-0.05	-0.32	< 0.1	NULL
+PDZD8	ENST00000334464.5	PDZ domain containing 8 	99	0	0	0	0	1	0	1	0	0	hsa-miR-99b-5p	0.0028	0.0188	0.0892	-0.05	-0.24	< 0.1	NULL
+TMEM186	ENST00000333050.6	transmembrane protein 186 	287	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0016	0.0111	0.0519	-0.05	-0.43	< 0.1	NULL
+MOCS3	ENST00000244051.1	molybdenum cofactor synthesis 3 	271	0	0	0	0	1	1	0	0	0	hsa-miR-100-5p	0.0019	0.0131	0.0589	-0.05	-0.40	< 0.1	NULL
+SPTBN2	ENST00000529997.1	spectrin, beta, non-erythrocytic 2 	910	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0048	0.0342	0.2074	-0.04	-0.04	< 0.1	NULL
+TARDBP	ENST00000240185.3	TAR DNA binding protein 	410	0	0	0	0	1	1	0	0	0	hsa-miR-99b-5p	0.0023	0.0164	0.0961	-0.04	-0.56	< 0.1	NULL
+ETFDH	ENST00000511912.1	electron-transferring-flavoprotein dehydrogenase 	117	0	0	0	0	1	1	0	0	0	hsa-miR-99a-5p	0.0030	0.0184	0.0661	-0.04	-0.81	< 0.1	NULL
+SLC14A1	ENST00000321925.4	solute carrier family 14 (urea transporter), member 1 	190	0	0	0	0	1	0	1	0	0	hsa-miR-99b-5p	0.0043	0.0262	0.0816	-0.04	-0.37	< 0.1	NULL
+AGO2	ENST00000220592.5	argonaute RISC catalytic component 2 	350	1	0	1	0	0	0	0	0	0	hsa-miR-100-5p	0.0122	0.0826	0.3749	-0.04	-0.88	0.28	2005, 2007, 2009, 2011
+SHH	ENST00000297261.2	sonic hedgehog 	32	0	0	0	0	1	0	1	0	0	hsa-miR-99b-5p	0.0029	0.0201	0.1036	-0.04	-0.14	< 0.1	NULL
+SLC16A10	ENST00000368850.3	solute carrier family 16 (aromatic amino acid transporter), member 10 	233	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0021	0.0140	0.0643	-0.04	-0.28	< 0.1	NULL
+MFSD6	ENST00000392328.1	major facilitator superfamily domain containing 6 	47	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0010	0.0073	0.0425	-0.04	-0.23	< 0.1	NULL
+HEXA	ENST00000268097.5	hexosaminidase A (alpha polypeptide) 	209	0	0	0	0	1	0	0	1	0	hsa-miR-99b-5p	0.0011	0.0077	0.0416	-0.04	-0.30	< 0.1	NULL
+RAP1B	ENST00000250559.9	RAP1B, member of RAS oncogene family 	3599	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0015	0.0097	0.0412	-0.04	-0.51	< 0.1	NULL
+ANKS6	ENST00000375018.1	ankyrin repeat and sterile alpha motif domain containing 6 	98	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0043	0.0301	0.1655	-0.04	-0.22	< 0.1	NULL
+ZC3H10	ENST00000257940.2	zinc finger CCCH-type containing 10 	49	0	0	0	0	1	0	1	0	0	hsa-miR-99a-5p	0.0019	0.0135	0.0708	-0.03	-0.34	< 0.1	NULL
+LNPEP	ENST00000231368.5	leucyl/cystinyl aminopeptidase 	28	0	0	0	0	1	1	0	0	0	hsa-miR-100-5p	0.0021	0.0143	0.0698	-0.03	-0.16	< 0.1	NULL
+RMND5A	ENST00000283632.4	required for meiotic nuclear division 5 homolog A (S. cerevisiae) 	261	1	0	0	1	0	0	0	0	0	hsa-miR-99a-5p	0.0010	0.0069	0.0387	-0.02	-0.36	0.14	2011
+RNF213	ENST00000582970.1	ring finger protein 213 	630	0	0	0	0	1	0	1	0	1	hsa-miR-99a-5p	0.0014	0.0102	0.0708	-0.02	-0.12	< 0.1	NULL
+ITPK1	ENST00000267615.6	inositol-tetrakisphosphate 1-kinase 	60	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0006	0.0043	0.0286	-0.02	-0.10	< 0.1	NULL
+CLYBL	ENST00000376355.3	citrate lyase beta like 	108	0	0	0	0	1	0	1	0	1	hsa-miR-99a-5p	0.0014	0.0092	0.0363	-0.02	-0.47	< 0.1	NULL
+RPTOR	ENST00000306801.3	regulatory associated protein of MTOR, complex 1 	190	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0057	0.0405	0.2385	-0.02	-0.02	< 0.1	NULL
+ELP2	ENST00000358232.6	elongator acetyltransferase complex subunit 2 	845	0	0	0	0	1	0	1	0	0	hsa-miR-99a-5p	0.0009	0.0060	0.0318	-0.02	-0.23	< 0.1	NULL
+ZNF554	ENST00000317243.5	zinc finger protein 554 	472	0	0	0	0	3	0	3	0	0	hsa-miR-100-5p	0.0027	0.0196	0.1226	-0.02	-0.70	< 0.1	NULL
+PIAS2	ENST00000585916.1	protein inhibitor of activated STAT, 2 	194	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0015	0.0105	0.0628	-0.02	-0.32	< 0.1	NULL
+MTG1	ENST00000317502.6	mitochondrial ribosome-associated GTPase 1 	1071	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0017	0.0120	0.0740	-0.02	-0.26	< 0.1	NULL
+RP11-108K14.8	ENST00000468317.2	Mitochondrial GTPase 1  	1071	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0017	0.0120	0.0740	-0.02	-0.26	< 0.1	NULL
+CENPF	ENST00000366955.3	centromere protein F, 350/400kDa 	181	0	0	0	0	1	0	1	0	1	hsa-miR-100-5p	0.0032	0.0225	0.1268	-0.02	-0.34	< 0.1	NULL
+SLC12A2	ENST00000262461.2	solute carrier family 12 (sodium/potassium/chloride transporter), member 2 	655	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0021	0.0155	0.1033	-0.02	-0.02	< 0.1	NULL
+TSPAN14	ENST00000429989.3	tetraspanin 14 	239	0	0	0	0	1	0	1	0	0	hsa-miR-99b-5p	0.0029	0.0172	0.0516	-0.02	-0.25	< 0.1	NULL
+ACO1	ENST00000309951.6	aconitase 1, soluble 	738	0	0	0	0	1	1	0	0	0	hsa-miR-99a-5p	0.0020	0.0139	0.0801	-0.02	-0.48	< 0.1	NULL
+SRSF3	ENST00000373715.6	serine/arginine-rich splicing factor 3 	2593	0	0	0	0	1	1	0	0	0	hsa-miR-99b-5p	0.0013	0.0074	0.0208	-0.02	-0.71	< 0.1	NULL
+TBC1D16	ENST00000310924.2	TBC1 domain family, member 16 	556	0	0	0	0	1	0	1	0	1	hsa-miR-100-5p	0.0046	0.0331	0.2087	-0.01	-0.23	< 0.1	NULL
+ISL2	ENST00000290759.4	ISL LIM homeobox 2 	381	0	0	0	0	1	0	1	0	0	hsa-miR-99a-5p	0.0012	0.0072	0.0237	-0.01	-0.41	< 0.1	NULL
+FZD5	ENST00000295417.3	frizzled family receptor 5 	122	1	0	1	0	0	0	0	0	0	hsa-miR-100-5p	0.0012	0.0076	0.0257	-0.01	-0.33	0.28	2007, 2009, 2011
+ZADH2	ENST00000322342.3	zinc binding alcohol dehydrogenase domain containing 2 	207	0	0	0	0	1	1	0	0	0	hsa-miR-100-5p	0.0015	0.0078	0.0189	-0.01	-0.57	< 0.1	NULL
+DPM3	ENST00000368399.1	dolichyl-phosphate mannosyltransferase polypeptide 3 	443	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0001	0.0010	0.0059	-0.01	-0.52	< 0.1	NULL
+APOA1	ENST00000375320.1	apolipoprotein A-I 	1201	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0005	0.0033	0.0151	-0.01	-0.34	< 0.1	NULL
+SRI	ENST00000265729.2	sorcin 	278	0	0	0	0	1	0	0	1	0	hsa-miR-99a-5p	0.0008	0.0056	0.0358	-0.01	-0.26	< 0.1	NULL
+CCDC115	ENST00000437688.2	coiled-coil domain containing 115 	329	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0001	0.0010	0.0062	-0.01	-0.34	< 0.1	NULL
+FXR1	ENST00000357559.4	fragile X mental retardation, autosomal homolog 1 	434	0	0	0	0	1	0	0	1	0	hsa-miR-99b-5p	0.0003	0.0018	0.0100	-0.01	-0.31	< 0.1	NULL
+ZNF226	ENST00000588883.1	zinc finger protein 226 	327	0	0	0	0	1	0	1	0	0	hsa-miR-99a-5p	0.0003	0.0022	0.0110	-0.01	-0.29	< 0.1	NULL
+VSNL1	ENST00000406397.1	visinin-like 1 	89	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0001	0.0008	0.0049	-0.01	-0.32	< 0.1	NULL
+RBFA	ENST00000262197.7	ribosome binding factor A (putative) 	131	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0003	0.0024	0.0128	-0.01	-0.16	< 0.1	NULL
+SMC1A	ENST00000322213.4	structural maintenance of chromosomes 1A 	1626	0	0	0	0	1	0	0	1	0	hsa-miR-99b-5p	0.0009	0.0063	0.0456	-0.01	-0.23	< 0.1	NULL
+GNB1L	ENST00000329517.6	guanine nucleotide binding protein (G protein), beta polypeptide 1-like 	210	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0001	0.0005	0.0034	0	-0.22	< 0.1	NULL
+ZYG11A	ENST00000371532.1	zyg-11 family member A, cell cycle regulator 	331	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0001	0.0009	0.0050	0	-0.33	< 0.1	NULL
+PRR12	ENST00000418929.2	proline rich 12 	95	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0006	0.0046	0.0300	0	-0.18	< 0.1	NULL
+KCMF1	ENST00000409785.4	potassium channel modulatory factor 1 	1285	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0001	0.0009	0.0046	0	-0.32	< 0.1	NULL
+TMEM231	ENST00000258173.6	transmembrane protein 231 	243	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0012	0.0091	0.0647	0	-0.13	< 0.1	NULL
+NDUFA10	ENST00000252711.2	NADH dehydrogenase (ubiquinone) 1 alpha subcomplex, 10, 42kDa 	2249	0	0	0	0	1	0	0	1	0	hsa-miR-99b-5p	0.0001	0.0007	0.0040	0	-0.23	< 0.1	NULL
+TUBD1	ENST00000346141.6	tubulin, delta 1 	157	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0002	0.0014	0.0053	0	-0.34	< 0.1	NULL
+C9orf156	ENST00000375119.3	chromosome 9 open reading frame 156 	177	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0001	0.0008	0.0046	0	-0.15	< 0.1	NULL
+NPEPPS	ENST00000322157.4	aminopeptidase puromycin sensitive 	2194	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0003	0.0020	0.0139	0	-0.21	< 0.1	NULL
+FAM105A	ENST00000274217.3	family with sequence similarity 105, member A 	2613	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0001	0.0009	0.0058	0	-0.05	< 0.1	NULL
+PDK1	ENST00000282077.3	pyruvate dehydrogenase kinase, isozyme 1 	637	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0003	0.0022	0.0122	0	-0.25	< 0.1	NULL
+PLA2G16	ENST00000323646.5	phospholipase A2, group XVI 	2547	0	0	0	0	1	0	1	0	0	hsa-miR-99a-5p	0.0001	0.0004	0.0026	0	-0.14	< 0.1	NULL
+ZNF146	ENST00000443387.2	zinc finger protein 146 	3086	0	0	0	0	1	0	0	1	0	hsa-miR-99a-5p	0.0000	0.0001	0.0005	0	-0.29	< 0.1	NULL
+RNF149	ENST00000295317.3	ring finger protein 149 	318	0	0	0	0	1	0	1	0	1	hsa-miR-99a-5p	0.0004	0.0031	0.0216	0	-0.35	< 0.1	NULL
+KLHL36	ENST00000564996.1	kelch-like family member 36 	483	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0001	0.0004	0.0023	0	-0.18	< 0.1	NULL
+IER5	ENST00000367577.4	immediate early response 5 	11212	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0005	0.0035	0.0247	0	-0.36	< 0.1	NULL
+DUSP1	ENST00000239223.3	dual specificity phosphatase 1 	37211	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0000	0.0002	0.0012	0	-0.17	< 0.1	NULL
+PPIF	ENST00000394579.3	peptidylprolyl isomerase F 	9304	0	0	0	0	1	0	0	1	0	hsa-miR-99a-5p	0.0000	0.0001	0.0004	0	-0.39	< 0.1	NULL
+LGALS1	ENST00000215909.5	lectin, galactoside-binding, soluble, 1 	50186	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0000	0.0001	0.0005	0	-0.44	< 0.1	NULL
+BMP2	ENST00000378827.4	bone morphogenetic protein 2 	1193	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0000	0.0001	0.0004	0	-0.32	< 0.1	NULL
+GPRC5A	ENST00000014914.5	G protein-coupled receptor, family C, group 5, member A 	341	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0024	0.0173	0.1152	0	-0.05	< 0.1	NULL
+EVI2B	ENST00000330927.4	ecotropic viral integration site 2B 	5	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0000	0.0002	0.0010	0	-0.37	< 0.1	NULL
+CAPZB	ENST00000375142.1	capping protein (actin filament) muscle Z-line, beta 	545	0	0	0	0	1	0	1	0	2	hsa-miR-100-5p	0.0000	0.0002	0.0012	0	-0.28	< 0.1	NULL
+MRPS23	ENST00000313608.8	mitochondrial ribosomal protein S23 	7140	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0000	0.0002	0.0013	0	-0.21	< 0.1	NULL
+FCN2	ENST00000350339.2	ficolin (collagen/fibrinogen domain containing lectin) 2 	5	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0000	0.0001	0.0005	0	-0.32	< 0.1	NULL
+GPR26	ENST00000284674.1	G protein-coupled receptor 26 	5	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0000	0.0001	0.0007	0	-0.21	< 0.1	NULL
+CNTNAP5	ENST00000431078.1	contactin associated protein-like 5 	5	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0001	0.0009	0.0061	0	-0.22	< 0.1	NULL
+C10orf71	ENST00000323868.4	chromosome 10 open reading frame 71 	5	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0005	0.0033	0.0236	0	-0.20	< 0.1	NULL
+SRMS	ENST00000217188.1	src-related kinase lacking C-terminal regulatory tyrosine and N-terminal myristylation sites 	5	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0000	0.0000	0.0003	0	-0.16	< 0.1	NULL
+XRCC5	ENST00000392133.3	X-ray repair complementing defective repair in Chinese hamster cells 5 (double-strand-break rejoining) 	14802	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0000	0.0001	0.0004	0	-0.21	< 0.1	NULL
+STARD3NL	ENST00000009041.7	STARD3 N-terminal like 	1911	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0000	0.0001	0.0005	0	-0.15	< 0.1	NULL
+BTG3	ENST00000339775.6	BTG family, member 3 	3656	0	0	0	0	1	0	0	1	0	hsa-miR-99b-5p	0.0000	0.0001	0.0003	0	-0.43	< 0.1	NULL
+APOC3	ENST00000227667.3	apolipoprotein C-III 	1689	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0001	0.0004	0.0032	0	-0.20	< 0.1	NULL
+HECTD1	ENST00000553700.1	HECT domain containing E3 ubiquitin protein ligase 1 	34	0	0	0	0	1	1	0	0	0	hsa-miR-100-5p	0.0052	0.0374	0.2231	0	-0.70	< 0.1	NULL
+IRF2BP2	ENST00000366610.3	interferon regulatory factor 2 binding protein 2 	8690	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0000	0.0001	0.0002	0	-0.32	< 0.1	NULL
+GUCY1A3	ENST00000296518.7	guanylate cyclase 1, soluble, alpha 3 	42	0	0	0	0	1	1	0	0	0	hsa-miR-100-5p	0.0000	0.0000	0.0001	0	-0.35	< 0.1	NULL
+MCTP2	ENST00000357742.4	multiple C2 domains, transmembrane 2 	59	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0011	0.0080	0.0577	0	-0.34	< 0.1	NULL
+LTBR	ENST00000228918.4	lymphotoxin beta receptor (TNFR superfamily, member 3) 	49	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0000	0.0000	0.0000	0	-0.36	< 0.1	NULL
+ALG13	ENST00000371979.3	ALG13, UDP-N-acetylglucosaminyltransferase subunit 	612	0	0	0	0	1	0	1	0	0	hsa-miR-100-5p	0.0000	0.0000	0.0001	0	-0.47	< 0.1	NULL
+C5orf55	ENST00000408966.2	chromosome 5 open reading frame 55 	195	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0000	0.0000	0.0000	0	-0.44	< 0.1	NULL
+COX7B	ENST00000481445.1	cytochrome c oxidase subunit VIIb 	83	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0000	0.0000	0.0000	0	-0.26	< 0.1	NULL
+TGFBR2	ENST00000359013.4	transforming growth factor, beta receptor II (70/80kDa) 	2168	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0000	0.0000	0.0000	0	-0.21	< 0.1	NULL
+TRIM44	ENST00000299413.5	tripartite motif containing 44 	4203	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0000	0.0000	0.0000	0	-0.22	< 0.1	NULL
+DDRGK1	ENST00000354488.3	DDRGK domain containing 1 	3324	0	0	0	0	1	0	0	1	0	hsa-miR-100-5p	0.0000	0.0000	0.0000	0	-0.36	< 0.1	NULL
