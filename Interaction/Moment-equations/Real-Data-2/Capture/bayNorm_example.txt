@@ -1,0 +1,186 @@
+ Fibroblasts_A10_S10  Fibroblasts_A11_S11    Fibroblasts_A2_S2 
+         0.135055222          0.198842710          0.034437750 
+   Fibroblasts_A3_S3    Fibroblasts_A4_S4    Fibroblasts_A5_S5 
+         0.037629625          0.186445345          0.034393890 
+   Fibroblasts_A7_S7    Fibroblasts_A8_S8  Fibroblasts_B10_S34 
+         0.060827749          0.101642296          0.087780171 
+ Fibroblasts_B11_S35  Fibroblasts_B12_S36  Fibroblasts_B13_S37 
+         0.091956219          0.076191806          0.055240430 
+ Fibroblasts_B15_S39  Fibroblasts_B17_S41  Fibroblasts_B18_S42 
+         0.062522773          0.092637919          0.080127962 
+ Fibroblasts_B19_S43   Fibroblasts_B1_S25  Fibroblasts_B21_S45 
+         0.070607964          0.069435248          0.017725537 
+ Fibroblasts_B23_S47   Fibroblasts_B2_S26   Fibroblasts_B4_S28 
+         0.182509992          0.094898574          0.145015423 
+  Fibroblasts_B5_S29   Fibroblasts_B6_S30   Fibroblasts_B7_S31 
+         0.229844681          0.050510251          0.089486159 
+ Fibroblasts_C10_S58  Fibroblasts_C11_S59  Fibroblasts_C12_S60 
+         0.110535953          0.060175735          0.091735047 
+ Fibroblasts_C13_S61  Fibroblasts_C14_S62  Fibroblasts_C15_S63 
+         0.097629653          0.063137880          0.107049094 
+ Fibroblasts_C17_S65  Fibroblasts_C18_S66  Fibroblasts_C19_S67 
+         0.055977223          0.140178536          0.096993685 
+ Fibroblasts_C20_S68  Fibroblasts_C21_S69  Fibroblasts_C23_S71 
+         0.179613903          0.109493746          0.167340897 
+  Fibroblasts_C3_S51   Fibroblasts_C4_S52   Fibroblasts_C5_S53 
+         0.043284338          0.108682606          0.053287864 
+  Fibroblasts_C6_S54   Fibroblasts_C7_S55   Fibroblasts_C8_S56 
+         0.027949164          0.075112961          0.162698437 
+  Fibroblasts_C9_S57  Fibroblasts_D10_S82  Fibroblasts_D11_S83 
+         0.056177266          0.092948949          0.035049916 
+ Fibroblasts_D12_S84  Fibroblasts_D13_S85  Fibroblasts_D14_S86 
+         0.057455888          0.099179725          0.240015891 
+ Fibroblasts_D17_S89  Fibroblasts_D18_S90   Fibroblasts_D1_S73 
+         0.234397817          0.071991957          0.087209726 
+ Fibroblasts_D20_S92  Fibroblasts_D21_S93  Fibroblasts_D22_S94 
+         0.211492269          0.115495327          0.204176230 
+ Fibroblasts_D23_S95   Fibroblasts_D2_S74   Fibroblasts_D3_S75 
+         0.305293812          0.048490825          0.150090865 
+  Fibroblasts_D4_S76   Fibroblasts_D5_S77   Fibroblasts_D6_S78 
+         0.130617085          0.048150109          0.078609448 
+  Fibroblasts_D7_S79   Fibroblasts_D8_S80   Fibroblasts_D9_S81 
+         0.240897902          0.041160879          0.059312712 
+Fibroblasts_E10_S106 Fibroblasts_E13_S109 Fibroblasts_E16_S112 
+         0.087750753          0.083549566          0.043091783 
+Fibroblasts_E17_S113 Fibroblasts_E19_S115   Fibroblasts_E1_S97 
+         0.111945887          0.033141209          0.143036648 
+Fibroblasts_E20_S116 Fibroblasts_E21_S117 Fibroblasts_E22_S118 
+         0.063906230          0.075918217          0.069582071 
+  Fibroblasts_E3_S99  Fibroblasts_E4_S100  Fibroblasts_E7_S103 
+         0.074271868          0.058066450          0.058660430 
+ Fibroblasts_E8_S104  Fibroblasts_E9_S105 Fibroblasts_F10_S130 
+         0.267207403          0.102857000          0.162015667 
+Fibroblasts_F11_S131 Fibroblasts_F13_S133 Fibroblasts_F15_S135 
+         0.116519615          0.037778855          0.138345782 
+Fibroblasts_F16_S136 Fibroblasts_F17_S137 Fibroblasts_F18_S138 
+         0.118416020          0.057971509          0.062838350 
+Fibroblasts_F19_S139  Fibroblasts_F1_S121 Fibroblasts_F20_S140 
+         0.165886033          0.009419976          0.158376903 
+Fibroblasts_F21_S141 Fibroblasts_F22_S142 Fibroblasts_F23_S143 
+         0.165616455          0.094397662          0.031142376 
+ Fibroblasts_F2_S122  Fibroblasts_F3_S123  Fibroblasts_F4_S124 
+         0.122502743          0.101095919          0.098856659 
+ Fibroblasts_F5_S125  Fibroblasts_F6_S126  Fibroblasts_F7_S127 
+         0.041364132          0.097745988          0.099566708 
+ Fibroblasts_F9_S129 Fibroblasts_G10_S154 Fibroblasts_G11_S155 
+         0.035681872          0.146158454          0.111198397 
+Fibroblasts_G12_S156 Fibroblasts_G13_S157 Fibroblasts_G14_S158 
+         0.331307526          0.076732299          0.060371232 
+Fibroblasts_G15_S159 Fibroblasts_G16_S160 Fibroblasts_G17_S161 
+         0.058864753          0.090178290          0.103873265 
+Fibroblasts_G18_S162 Fibroblasts_G20_S164 Fibroblasts_G21_S165 
+         0.287369836          0.346146602          0.113639841 
+Fibroblasts_G22_S166 Fibroblasts_G23_S167  Fibroblasts_G2_S146 
+         0.159980730          0.155483757          0.039441519 
+ Fibroblasts_G3_S147  Fibroblasts_G4_S148  Fibroblasts_G5_S149 
+         0.128517428          0.078311254          0.065615428 
+ Fibroblasts_G6_S150  Fibroblasts_G7_S151  Fibroblasts_G9_S153 
+         0.111582706          0.083354871          0.087820287 
+Fibroblasts_H10_S178 Fibroblasts_H11_S179 Fibroblasts_H12_S180 
+         0.064850287          0.041842311          0.060429266 
+Fibroblasts_H13_S181 Fibroblasts_H15_S183 Fibroblasts_H16_S184 
+         0.081622941          0.067215243          0.176286170 
+Fibroblasts_H17_S185 Fibroblasts_H18_S186 Fibroblasts_H19_S187 
+         0.076733101          0.159400924          0.171451957 
+ Fibroblasts_H1_S169 Fibroblasts_H21_S189 Fibroblasts_H22_S190 
+         0.059765485          0.153567829          0.096657247 
+Fibroblasts_H23_S191  Fibroblasts_H2_S170  Fibroblasts_H3_S171 
+         0.138385630          0.034063871          0.034501133 
+ Fibroblasts_H4_S172  Fibroblasts_H5_S173  Fibroblasts_H6_S174 
+         0.037256014          0.042954319          0.126426061 
+ Fibroblasts_H7_S175  Fibroblasts_H8_S176  Fibroblasts_H9_S177 
+         0.018308284          0.070957773          0.042119377 
+Fibroblasts_I10_S202 Fibroblasts_I12_S204 Fibroblasts_I13_S205 
+         0.068368972          0.058524839          0.066790017 
+Fibroblasts_I14_S206 Fibroblasts_I15_S207 Fibroblasts_I16_S208 
+         0.107408263          0.061370381          0.049019818 
+Fibroblasts_I18_S210 Fibroblasts_I19_S211 Fibroblasts_I21_S213 
+         0.116198957          0.141785839          0.063848731 
+Fibroblasts_I22_S214  Fibroblasts_I2_S194  Fibroblasts_I3_S195 
+         0.106536147          0.101432891          0.022607888 
+ Fibroblasts_I4_S196  Fibroblasts_I5_S197  Fibroblasts_I6_S198 
+         0.094214199          0.057637746          0.018526514 
+ Fibroblasts_I7_S199  Fibroblasts_I8_S200 Fibroblasts_J10_S226 
+         0.039357810          0.127308875          0.152963954 
+Fibroblasts_J11_S227 Fibroblasts_J12_S228 Fibroblasts_J13_S229 
+         0.096795780          0.061362626          0.113130371 
+Fibroblasts_J14_S230 Fibroblasts_J15_S231 Fibroblasts_J16_S232 
+         0.052455061          0.087004600          0.065580126 
+Fibroblasts_J18_S234 Fibroblasts_J19_S235  Fibroblasts_J1_S217 
+         0.057976591          0.107167301          0.129580762 
+Fibroblasts_J21_S237 Fibroblasts_J22_S238 Fibroblasts_J23_S239 
+         0.121231609          0.136204672          0.090835118 
+ Fibroblasts_J2_S218  Fibroblasts_J3_S219  Fibroblasts_J4_S220 
+         0.060879097          0.022446088          0.210997241 
+ Fibroblasts_J5_S221  Fibroblasts_J7_S223  Fibroblasts_J8_S224 
+         0.096072628          0.080507992          0.061783841 
+Fibroblasts_K10_S250 Fibroblasts_K12_S252 Fibroblasts_K13_S253 
+         0.106514752          0.114601281          0.046654862 
+Fibroblasts_K14_S254 Fibroblasts_K15_S255 Fibroblasts_K18_S258 
+         0.014082761          0.043500161          0.105252444 
+Fibroblasts_K19_S259 Fibroblasts_K20_S260 Fibroblasts_K21_S261 
+         0.067452193          0.204661630          0.105807646 
+Fibroblasts_K22_S262 Fibroblasts_K23_S263  Fibroblasts_K2_S242 
+         0.130683142          0.157847910          0.060814110 
+ Fibroblasts_K3_S243  Fibroblasts_K4_S244  Fibroblasts_K5_S245 
+         0.054090981          0.054406023          0.036156308 
+ Fibroblasts_K6_S246  Fibroblasts_K8_S248 Fibroblasts_L10_S274 
+         0.097916346          0.120787394          0.050829037 
+Fibroblasts_L13_S277 Fibroblasts_L14_S278 Fibroblasts_L15_S279 
+         0.069405562          0.143098961          0.064822741 
+Fibroblasts_L17_S281 Fibroblasts_L18_S282 Fibroblasts_L19_S283 
+         0.173151259          0.087111041          0.076954808 
+ Fibroblasts_L1_S265 Fibroblasts_L20_S284 Fibroblasts_L21_S285 
+         0.029791813          0.060777203          0.145862400 
+Fibroblasts_L22_S286 Fibroblasts_L23_S287  Fibroblasts_L2_S266 
+         0.154375493          0.206089483          0.022451972 
+ Fibroblasts_L3_S267  Fibroblasts_L4_S268  Fibroblasts_L5_S269 
+         0.068360948          0.077346337          0.037345338 
+ Fibroblasts_L6_S270  Fibroblasts_L7_S271  Fibroblasts_L8_S272 
+         0.023221392          0.057806232          0.183175378 
+ Fibroblasts_L9_S273 Fibroblasts_M10_S298 Fibroblasts_M11_S299 
+         0.038890328          0.052656710          0.082971097 
+Fibroblasts_M12_S300 Fibroblasts_M13_S301 Fibroblasts_M14_S302 
+         0.106342789          0.161767752          0.157505589 
+Fibroblasts_M15_S303 Fibroblasts_M16_S304 Fibroblasts_M17_S305 
+         0.069209530          0.129786155          0.065559801 
+Fibroblasts_M18_S306 Fibroblasts_M19_S307 Fibroblasts_M20_S308 
+         0.202157606          0.260640190          0.090583993 
+Fibroblasts_M23_S311  Fibroblasts_M3_S291  Fibroblasts_M6_S294 
+         0.179671670          0.126805021          0.048662788 
+ Fibroblasts_M8_S296  Fibroblasts_M9_S297 Fibroblasts_N11_S323 
+         0.033573390          0.032640833          0.027520461 
+Fibroblasts_N12_S324 Fibroblasts_N13_S325 Fibroblasts_N14_S326 
+         0.115237784          0.051267101          0.041998228 
+Fibroblasts_N15_S327 Fibroblasts_N16_S328 Fibroblasts_N17_S329 
+         0.100413417          0.096897942          0.068257450 
+Fibroblasts_N18_S330 Fibroblasts_N19_S331  Fibroblasts_N1_S313 
+         0.110709253          0.061225430          0.057989428 
+Fibroblasts_N21_S333 Fibroblasts_N22_S334 Fibroblasts_N23_S335 
+         0.145177491          0.072252709          0.162426720 
+ Fibroblasts_N3_S315  Fibroblasts_N5_S317  Fibroblasts_N7_S319 
+         0.039288544          0.040092196          0.042471861 
+ Fibroblasts_N8_S320  Fibroblasts_N9_S321 Fibroblasts_O12_S348 
+         0.089552217          0.045911116          0.073894245 
+Fibroblasts_O13_S349 Fibroblasts_O14_S350 Fibroblasts_O15_S351 
+         0.049876690          0.077222513          0.082759821 
+Fibroblasts_O16_S352 Fibroblasts_O17_S353 Fibroblasts_O18_S354 
+         0.230088317          0.200364166          0.129328835 
+Fibroblasts_O19_S355  Fibroblasts_O1_S337 Fibroblasts_O20_S356 
+         0.081089937          0.157457985          0.263951610 
+Fibroblasts_O22_S358 Fibroblasts_O23_S359  Fibroblasts_O2_S338 
+         0.112345707          0.094327058          0.010289952 
+ Fibroblasts_O3_S339  Fibroblasts_O5_S341  Fibroblasts_O6_S342 
+         0.033760596          0.112590681          0.057643897 
+ Fibroblasts_O7_S343  Fibroblasts_O8_S344  Fibroblasts_O9_S345 
+         0.044729574          0.152122326          0.031956458 
+Fibroblasts_P11_S371 Fibroblasts_P13_S373 Fibroblasts_P16_S376 
+         0.200047519          0.089669890          0.175765200 
+Fibroblasts_P17_S377 Fibroblasts_P18_S378  Fibroblasts_P1_S361 
+         0.075378794          0.315459138          0.069851916 
+Fibroblasts_P21_S381 Fibroblasts_P22_S382  Fibroblasts_P3_S363 
+         0.305639877          0.033964919          0.107044815 
+ Fibroblasts_P4_S364  Fibroblasts_P5_S365  Fibroblasts_P6_S366 
+         0.188540990          0.112751678          0.082867599 
+ Fibroblasts_P8_S368 
+         0.155856565 
