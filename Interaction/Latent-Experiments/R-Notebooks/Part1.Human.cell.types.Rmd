@@ -8,7 +8,7 @@ output:
   
 ---
 ```{r setup}
-    knitr::opts_knit$set(root.dir = normalizePath("Scripts/")) 
+    knitr::opts_knit$set(root.dir = normalizePath("C:/Users/willi/Documents/ProjectPaper/M5R/Interaction/Latent-Experiments/"))
 ```
 
 ```{r}
@@ -27,12 +27,12 @@ mycols<-c("#F39B7FB2","#E64B35B2", "#DC0000B2","#4DBBD5B2","steelblue2", "#3C548
 ```
 ##Load count matrix
 ```{r}
-counts<-read.delim(file = "counts.human.tsv",sep="\t", header= TRUE)
+counts<-read.delim(file = "C:/Users/willi/Documents/ProjectPaper/M5R/Interaction/Latent-Experiments/Data/GSE151334_counts.human.tsv",sep="\t", header= TRUE)
 ```
 ##Load the gene-to-biotype matrix
 ```{r}
-gtf<-read.delim(file = "GRCh38.id.name.biotype.tsv", sep='\t',  header=T)
-gtf<-gtf[match(rownames(counts),gtf$gene_name), ] 
+gtf<-read.delim(file = "C:/Users/willi/Documents/ProjectPaper/M5R/Interaction/Latent-Experiments/R-Notebooks/GRC/GRCh38.id.name.biotype.tsv", sep='\t',  header=T)
+gtf<-gtf[match(rownames(counts),gtf$external_gene_name), ] 
 ```
 
 ##Plot number of genes (cpm>1) per biotype 
@@ -251,7 +251,8 @@ FeaturePlot(object = counts,
             features = c('HIST1H2AG', 'HIST1H3B','HIST2H4B',
                         'CDK1', 'CCNB1', 'FBXO5'), 
             ncol = 3,
-            sort.cell=T,
+            #sort.cell=T,
+            order=T,
             slot='data')
 ```
 
@@ -263,7 +264,8 @@ counts.markers <- FindAllMarkers(object = counts, only.pos = TRUE, min.pct = 0.2
 
 # Single cell heatmap of feature expression
 ```{r,fig.width=6, fig.asp=.8}
-top10 <-counts.markers %>% group_by(cluster) %>% top_n(n = 10, wt = avg_logFC)
+# Need to change "avg_logFC" to "avg_log2FC", likely version change
+top10 <-counts.markers %>% group_by(cluster) %>% top_n(n = 10, wt = avg_log2FC)
 DoHeatmap(object = counts, features = top10$gene) + NoLegend()
 ```
 
@@ -275,7 +277,8 @@ VlnPlot(object = counts, features = c(top10$gene,"CD24", "CKB","TOP2A", "MCM6", 
 
 # Plot markers for every gene type
 ```{r,fig.width=6, fig.asp=.5, echo=F}
-top500 <-counts.markers %>% group_by(cluster) %>% top_n(n = 500, wt = avg_logFC)
+# logFC -> log2FC
+top500 <-counts.markers %>% group_by(cluster) %>% top_n(n = 500, wt = avg_log2FC)
 genes<-top500$gene[grepl("HIST", top500$gene)]
 DotPlot(
   counts,
@@ -305,7 +308,8 @@ DotPlot(
 ```
 # Plot snoRNA markers
 ```{r,fig.width=6, fig.asp=.5, echo=F}
-top1000 <-counts.markers %>% group_by(cluster) %>% top_n(n = 1000, wt = avg_logFC)
+# logFC -> log2FC
+top1000 <-counts.markers %>% group_by(cluster) %>% top_n(n = 1000, wt = avg_log2FC)
 genes<-top1000$gene[grepl("SNOR", top1000$gene)]
 
 DotPlot(
@@ -320,7 +324,8 @@ DotPlot(
 ```
 # Plot lncRNA markers
 ```{r,fig.width=6, fig.asp=.5, echo=F}
-linc<-as.character(gtf$gene_name[gtf$gene_biotype=="lincRNA"])
+# changed lincRNA -> lncRNA
+linc<-as.character(gtf$external_gene_name[gtf$gene_biotype=="lncRNA"])
 linc<-linc[linc%in%top1000$gene]
 linc<-linc[!grepl('^RP|^MIR|^CH|BCYRN1|^AC', linc)]
 genes<-unique(linc)
@@ -338,7 +343,7 @@ DotPlot(
 ```
 # Plot snRNA markers
 ```{r,fig.width=6, fig.asp=.5, echo=F}
-sn<-as.character(gtf$gene_name[gtf$gene_biotype=="snRNA"])
+sn<-as.character(gtf$external_gene_name[gtf$gene_biotype=="snRNA"])
 sn<-sn[sn%in%top1000$gene]
 
 DotPlot(
@@ -416,3 +421,20 @@ VlnPlot(object = counts, group.by ='plate',features = genes, ncol=5, pt.size=0)
 saveRDS(counts,file="count.Seurat.obj.rds")
 ```
 
+# Convert to AnnData
+
+```{r}
+library(anndataR)
+counts_ad = as_AnnData(counts)
+counts_ad
+```
+```{r}
+write_h5ad(counts_ad, path = "anndata.h5ad")
+```
+
+# Save biotypes to check
+
+```{r}
+write.csv(gtf, file="biomaRt_biotypes.csv")
+gtf
+```

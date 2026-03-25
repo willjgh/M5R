@@ -8,7 +8,7 @@ output:
   
 ---
 ```{r setup}
-    knitr::opts_knit$set(root.dir = normalizePath("Scripts/")) 
+    knitr::opts_knit$set(root.dir = normalizePath("C:/Users/willi/Documents/ProjectPaper/M5R/Interaction/Latent-Experiments/R-Notebooks/")) 
 ```
 ```{r, echo=T}
 library(reticulate)
@@ -31,8 +31,8 @@ counts<-readRDS("count.Seurat.obj.rds")
 
 ```{r,echo=T}
 ### Get biotypes
-gtf<-read.delim(file = "GRCh38.id.name.biotype.tsv", sep='\t',  header=T)
-gtf<-gtf[match(rownames(counts),gtf$gene_name), ] 
+gtf<-read.delim(file = "GRC/GRCh38.id.name.biotype.tsv", sep='\t',  header=T)
+gtf<-gtf[match(rownames(counts),gtf$external_gene_name), ] 
 gtf<-data.frame(lapply(gtf, as.character),stringsAsFactors=FALSE)
 ```
 
@@ -47,7 +47,7 @@ counts.mcf<-subset(counts, idents = 'MCF7')
 ```
 
 ```{r,message=FALSE, warning=FALSE}
-cc.genes<-read.delim(file = "/Users/alinaisakova/Documents/Stanford/sc-smallRNA/cell_cycle_vignette_files/regev_lab_cell_cycle_genes.txt", sep="\t", header= F, stringsAsFactors = F)
+cc.genes<-read.delim(file = "regev_lab_cell_cycle_genes.txt", sep="\t", header= F, stringsAsFactors = F)
 s.genes<-cc.genes[1:43,]
 g2m.genes<-cc.genes[44:97,]
 ```
