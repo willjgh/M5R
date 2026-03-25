@@ -1,0 +1,48 @@
+---
+title: "Biotype-loading"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(biomaRt)
+```
+
+```{r}
+# Connect to the human Ensembl dataset
+ensembl <- useMart(
+  biomart = "ensembl",
+  dataset = "hsapiens_gene_ensembl",
+  host = "https://may2015.archive.ensembl.org" #"https://useast.ensembl.org"
+)
+
+# Retrieve the gene ID, name, and biotype
+gene_map <- getBM(attributes = c("ensembl_gene_id", "external_gene_name", "gene_biotype"), mart = ensembl)
+
+# Check if data is present
+if(nrow(gene_map) > 0) {
+  write.table(gene_map, "GRCh38.id.name.biotype.tsv", sep="\t", quote=FALSE, row.names=FALSE)
+  message("File successfully written to: ", getwd())
+} else {
+  stop("No data was retrieved from BioMart.")
+}
+```
+```{r}
+# Connect to the mouse Ensembl dataset
+ensembl <- useMart(
+  biomart = "ensembl",
+  dataset = "mmusculus_gene_ensembl",
+  host = "https://may2015.archive.ensembl.org" #"https://useast.ensembl.org"
+)
+
+# Retrieve the gene ID, name, and biotype
+gene_map <- getBM(attributes = c("ensembl_gene_id", "external_gene_name", "gene_biotype"), mart = ensembl)
+
+# Check if data is present
+if(nrow(gene_map) > 0) {
+  write.table(gene_map, "GRCm38.id.name.biotype.tsv", sep="\t", quote=FALSE, row.names=FALSE)
+  message("File successfully written to: ", getwd())
+} else {
+  stop("No data was retrieved from BioMart.")
+}
+```
