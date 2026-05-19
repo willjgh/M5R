@@ -8,7 +8,7 @@ output:
   
 ---
 ```{r setup}
-    knitr::opts_knit$set(root.dir = normalizePath("Scripts/")) 
+    knitr::opts_knit$set(root.dir = normalizePath("C:/Users/willi/Documents/ProjectPaper/M5R/Interaction/Latent-Experiments/R-Notebooks/")) 
 ```
 
 ```{r}
@@ -31,13 +31,13 @@ mycols<-c("#F39B7F","#E64B35", "#DC0000","#4DBBD5","steelblue2", "#3C5488","medi
 ```
 
 ```{r}
-counts<-read.delim(file = "counts.mouse.tsv",sep="\t", header= TRUE, row.names=1)
+counts<-read.delim(file = "C:/Users/willi/Documents/ProjectPaper/M5R/Interaction/Latent-Experiments/Pseudotime-Investigation/Data/GSE151334_counts.mouse.tsv",sep="\t", header= TRUE, row.names=1)
 #counts.sorted<-counts.sorted[!grepl("Hist", rownames(counts.sorted)),!grepl("plate10", colnames(counts.sorted))]
 ```
 
 ```{r}
-gtf<-read.delim(file = "GRCm38.id.name.biotype.tsv", sep='\t',  header=T)
-gtf<-gtf[match(rownames(counts.sorted),gtf$gene_name), ]
+gtf<-read.delim(file = "GRC/GRCm38.id.name.biotype.tsv", sep='\t',  header=T)
+gtf<-gtf[match(rownames(counts),gtf$external_gene_name), ] # do not sort
 ```
 
 
@@ -82,12 +82,19 @@ counts <- AddMetaData(counts,
 VlnPlot(object = counts, features = c("nFeature_RNA", "nCount_RNA", "percent.mt", "percent.hist"), ncol = 4)
 ```
 
+
+```{r}
+Sys.setenv(RETICULATE_PYTHON = "C:/Python311")
+#reticulate::use_virtualenv("C:/Users/willi/Documents/ProjectPaper/M5R_venv")
+#reticulate::py_install(packages ='umap-learn')
+```
+
 ```{r, fig.width=10, fig.asp=0.5}
 counts<-SCTransform(counts, verbose = FALSE, variable.features.n = 2000)
 counts<-RunPCA(counts, verbose = FALSE) 
 counts<-RunUMAP(counts, dims = 1:14, verbose = FALSE, umap.method='umap-learn', metric='correlation')
 counts <- RunTSNE(object = counts, dims = 1:15, verbose = FALSE)
-counts <- FindNeighbors(counts, dims = 1:15, verbose = FALSE,reduction.type = "umap")
+counts <- FindNeighbors(counts, dims = 1:15, verbose = FALSE, reduction = "pca") # fixed typo with old argument 'reduction.type = "umap"' and instead cluster on PCA space
 counts<-FindClusters(counts,resolution = 1.2, verbose = T)
 ```
 
@@ -150,7 +157,7 @@ plot
 ```
 
 ```{r, fig.width=12, fig.asp=1}
-FeaturePlot(counts, reduction = "umap", features = c("Nanog", "Sox2","Otx2", "Sox4", "Afp","Bmp7","T","Srf", "S100a4", "Tubb1", "Pax2", "Pax6", "Nes","Nog", "Krt18","Sox17", "Gata6","Gata4","Fgf5", "Sox7","Tubb3","Myc", "Bmp2", "Mir370", "Mir666","Mc1r", "Flk1", "Desmin", "Acta2", "Fbn2"), pt.size = 1, ncol = 4, sort.cell=T)
+FeaturePlot(counts, reduction = "umap", features = c("Nanog", "Sox2","Otx2", "Sox4", "Afp","Bmp7","T","Srf", "S100a4", "Tubb1", "Pax2", "Pax6", "Nes","Nog", "Krt18","Sox17", "Gata6","Gata4","Fgf5", "Sox7","Tubb3","Myc", "Bmp2", "Mir370", "Mir666","Mc1r", "Flk1", "Desmin", "Acta2", "Fbn2"), pt.size = 1, ncol = 4, order=T)# sort.cell=T) depreciated
 ```
 
 
@@ -171,7 +178,7 @@ counts.markers <- FindAllMarkers(object = counts, only.pos = T, min.pct = 0.25, 
 ```
 
 ```{r,fig.width=8, fig.asp=1.5}
-top20 <-counts.markers %>% group_by(cluster) %>% top_n(n = 20, wt = avg_logFC) ##select and plot top20 markers based on logFC
+top20 <-counts.markers %>% group_by(cluster) %>% top_n(n = 20, wt = avg_log2FC) ##select and plot top20 markers based on logFC
 DoHeatmap(object = counts, features =as.character(top20$gene)) + NoLegend()
 
 top20 <-counts.markers %>% group_by(cluster) %>% top_n(n = 20, wt = -p_val_adj) ##select and plot top20 markers based on adjusted p-value
@@ -190,7 +197,7 @@ FeaturePlot(counts, features = c("Nanog" ,"Pou5f1","T",
                                  "Hes7", "Tbx6", #mesoderm
                                  "Wnt3a", "Fgf17", "Fgf8", "Nkx1-2", 
                                  "Pax6","Sox1", "Hes3", "Sox2"
-                                 ), pt.size = 0.8, ncol = 4, sort.cell=T)
+                                 ), pt.size = 0.8, ncol = 4, order=T)# sort.cell=T)
 ```
 
 
@@ -225,7 +232,7 @@ FeaturePlot(counts, features = c("Mir370" ,"Mir298","Mir387",
                                  "Mir130a",
                                  "Mir5136","Mir302d",
                                  "Mir2137", "Mir6240", "Mir382"
-                                 ), pt.size = 0.8, ncol = 4, sort.cell=T, cols = c.cols)+ NoLegend()
+                                 ), pt.size = 0.8, ncol = 4, order=T, cols = c.cols)+ NoLegend() # sort.cell=T
 ```
 
 ```{r,fig.width=6, fig.asp=0.6}
@@ -244,13 +251,25 @@ DimPlot(object = counts, reduction = "umap", pt.size = 1) + ggtitle("UMAP by clu
 ```
 
 ###Infer trajectory, compute pseudotime
+
+```{r}
+#assignInNamespace(
+#  "dfs", 
+#  function(graph, root, mode = "out", ...) {
+#    igraph::dfs(graph = graph, root = root, mode = mode, ...)
+#  }, 
+#  ns = "igraph"
+#)
+```
+
+
 ```{r}
 library(dyno)
 library(tidyverse)
-dyno.expression<-GetAssayData(object = counts, slot="data")
+dyno.expression<-GetAssayData(object = counts, layer="data")# slot="data")
 dyno.expression<-Matrix::t(dyno.expression)
 
-dyno.counts<- GetAssayData(object = counts, slot="counts")
+dyno.counts<- GetAssayData(object = counts, layer="data")# slot="counts")
 dyno.counts<- Matrix::t(dyno.counts)
 
 dyno.anno<-data.frame(lapply(counts@meta.data, as.character), stringsAsFactors=FALSE) 
@@ -292,12 +311,18 @@ dataset <- add_grouping(
 ```
 
 ```{r}
-
-model <- infer_trajectory(dataset, ti_paga_tree(filter_features = TRUE, n_neighbors = 13L,
-                                                n_comps = 30L, n_dcs = 5L, resolution = 2L,
-                                                embedding_type = "umap"))
-
-
+model <- infer_trajectory(
+  dataset = dataset,
+  method = ti_paga_tree(
+    filter_features = TRUE,
+    n_neighbors = 13L,
+    n_comps = 30L,
+    n_dcs = 5L,
+    resolution = 2L,
+    embedding_type = "umap"
+    ),
+  verbose = TRUE
+)
 ```
 
 
@@ -390,15 +415,32 @@ counts <- AddMetaData(counts,
 
 ```{r, fig.width=6, fig.asp=.6}
 library(viridis)
-plasma <- viridis(899, direction = 1, option = "D")
+plasma <- viridis(900, direction = 1, option = "D")
 DimPlot(counts, reduction = "umap", group.by ='pseudotime', pt.size = 1, cols = plasma)+ NoLegend() 
 ```
 
 ```{r}
 #Save the Seurat object for further analysis in part 2 (optional)
-#saveRDS(counts,file="Mouse.count.Seurat.obj.rds")
+saveRDS(counts, file="Mouse.count.Seurat.obj.rds")
 ```
 
+# Convert to AnnData and save
+
+```{r}
+counts_load <- readRDS("Mouse.count.Seurat.obj.rds")
+```
+
+```{r}
+library(anndataR)
+counts_ad = as_AnnData(counts_load)
+counts_ad
+```
+
+```{r}
+write_h5ad(counts_ad, path = "mouse.anndata.h5ad")
+```
+
+## Continue
 
 ```{r}
 dimred2<-Embeddings(object = counts, reduction = "umap")
