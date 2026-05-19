@@ -46,7 +46,7 @@ def construct_dataset(mirna_sample, mrna_dataset, beta, resamples=1000):
 
     return data
 
-def correlation_bootstrap_sample(sample, beta, confidence=None, resamples=None):
+def correlation_bootstrap_sample(rng, sample, beta, confidence=None, resamples=None):
 
     # get sample size
     n = sample.shape[0]
@@ -58,9 +58,6 @@ def correlation_bootstrap_sample(sample, beta, confidence=None, resamples=None):
     if confidence is None:
         confidence = 0.95
 
-    # initialize random generator
-    rng = np.random.default_rng()
-
     # bootstrap to N x n x 2 array
     boot = rng.choice(sample, size=(resamples, n))
 
@@ -70,34 +67,30 @@ def correlation_bootstrap_sample(sample, beta, confidence=None, resamples=None):
 
     # compute correlations
     estimates = np.zeros(resamples)
-    for i in range(resamples):
 
-        b1 = boot[i, :, 0]
-        b2 = boot[i, :, 1]
+    b1 = boot[:, :, 0]
+    b2 = boot[:, :, 1]
 
-        # OB moments
-        E_xy_OB = np.mean(b1 * b2)
-        E_x_OB = np.mean(b1)
-        E_y_OB = np.mean(b2)
-        E_x2_OB = np.mean(b1**2)
-        E_y2_OB = np.mean(b2**2)
+    # OB moments
+    E_xy_OB = np.mean(b1 * b2, axis=1)
+    E_x_OB = np.mean(b1, axis=1)
+    E_y_OB = np.mean(b2, axis=1)
+    E_x2_OB = np.mean(b1**2, axis=1)
+    E_y2_OB = np.mean(b2**2, axis=1)
 
-        # OG moments
-        E_xy_OG = E_xy_OB / E_beta2
-        E_x_OG = E_x_OB / E_beta
-        E_y_OG = E_y_OB / E_beta
-        E_x2_OG = (1 / E_beta2)*E_x2_OB + (1 / E_beta)*E_x_OB - (1 / E_beta2)*E_x_OB
-        E_y2_OG = (1 / E_beta2)*E_y2_OB + (1 / E_beta)*E_y_OB - (1 / E_beta2)*E_y_OB
+    # OG moments
+    E_xy_OG = E_xy_OB / E_beta2
+    E_x_OG = E_x_OB / E_beta
+    E_y_OG = E_y_OB / E_beta
+    E_x2_OG = (1 / E_beta2)*E_x2_OB + (1 / E_beta)*E_x_OB - (1 / E_beta2)*E_x_OB
+    E_y2_OG = (1 / E_beta2)*E_y2_OB + (1 / E_beta)*E_y_OB - (1 / E_beta2)*E_y_OB
 
-        varx_OG = E_x2_OG - E_x_OG**2
-        vary_OG = E_y2_OG - E_y_OG**2
+    varx_OG = E_x2_OG - E_x_OG**2
+    vary_OG = E_y2_OG - E_y_OG**2
 
-        if varx_OG <= 0.0 or vary_OG <= 0.0:
-            corr = np.nan
-        else:
-            corr = (E_xy_OG - E_x_OG*E_y_OG) / (np.sqrt(varx_OG) * np.sqrt(vary_OG))
-
-        estimates[i] = corr
+    mask = (varx_OG > 0.0) & (vary_OG > 0.0)
+    estimates[~mask] = np.nan
+    estimates[mask] = (E_xy_OG[mask] - E_x_OG[mask]*E_y_OG[mask]) / (np.sqrt(varx_OG[mask]) * np.sqrt(vary_OG[mask]))
 
     # take quantiles
     alpha = 1 - confidence
@@ -138,7 +131,7 @@ def correlation_bootstrap_sample(sample, beta, confidence=None, resamples=None):
 
     return result
 
-def correlation_bootstrap_dataset(dataset, confidence=None, resamples=None):
+def correlation_bootstrap_dataset(rng, dataset, confidence=None, resamples=None):
     '''Bootstrap dataset correlations.'''
 
     # record results
@@ -146,11 +139,11 @@ def correlation_bootstrap_dataset(dataset, confidence=None, resamples=None):
     
     # bootstrap
     for i in tqdm.tqdm(range(dataset.gene_pairs)):
-        results[i, :] = correlation_bootstrap_sample(np.array([*dataset.count_dataset.iloc[i].values]), np.ones(dataset.cells), confidence, resamples)
+        results[i, :] = correlation_bootstrap_sample(rng, np.array([*dataset.count_dataset.iloc[i].values]), np.ones(dataset.cells), confidence, resamples)
 
     return results
 
-def analytic_correlation_bootstrap_dataset(dataset, confidence=None, resamples=None):
+def analytic_correlation_bootstrap_dataset(rng, dataset, confidence=None, resamples=None):
     '''Bootstrap dataset correlations adjusted for capture efficiency.'''
 
     # record results
@@ -158,7 +151,7 @@ def analytic_correlation_bootstrap_dataset(dataset, confidence=None, resamples=N
     
     # bootstrap
     for i in tqdm.tqdm(range(dataset.gene_pairs)):
-        results[i, :] = correlation_bootstrap_sample(np.array([*dataset.count_dataset.iloc[i].values]), dataset.beta, confidence, resamples)
+        results[i, :] = correlation_bootstrap_sample(rng, np.array([*dataset.count_dataset.iloc[i].values]), dataset.beta, confidence, resamples)
 
     return results
 
@@ -242,11 +235,14 @@ dataset_SDP = construct_dataset(
     resamples=args.resamples
 )
 
+# initialize random generator
+rng = np.random.default_rng()
+
 # bootstrap observed correlation
-observed_correlation = correlation_bootstrap_dataset(dataset_SDP, confidence=args.confidence, resamples=args.resamples)
+observed_correlation = correlation_bootstrap_dataset(rng, dataset_SDP, confidence=args.confidence, resamples=args.resamples)
 
 # bootstrap analytic recovered correlation
-analytic_correlation = analytic_correlation_bootstrap_dataset(dataset_SDP, confidence=args.confidence, resamples=args.resamples)
+analytic_correlation = analytic_correlation_bootstrap_dataset(rng, dataset_SDP, confidence=args.confidence, resamples=args.resamples)
 
 # store
 result_df[f'{args.miRNA}_{args.phase}_c{int(100*args.confidence)}_OB'] = observed_correlation[:, 0]
