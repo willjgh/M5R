@@ -3,7 +3,8 @@ Temp/
 Interaction/Real-Data/Datasets
 Interaction/Moment-equations/Real-Data-2/Data/
 Interaction/Moment-equations/Real-Data-2/Results/Backup-2/
-Interaction/Latent-Experiments/Data/
+Interaction/Latent-Experiments/Day-Investigation/Data/
+Interaction/Latent-Experiments/Cell-Cycle-Investigation/Results/Script-Outfiles/
 *.h5ad
 *.rds
 *.RData
