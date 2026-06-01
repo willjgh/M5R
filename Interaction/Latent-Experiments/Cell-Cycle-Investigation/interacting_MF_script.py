@@ -63,7 +63,7 @@ parser.add_argument("--confidence", default=0.95)
 parser.add_argument("--resamples", default=1000)
 
 # optimization arguments
-parser.add_argument("--d", default=3)
+parser.add_argument("--d", default=3, type=int)
 parser.add_argument("--N", default=1000)
 parser.add_argument("--time_limit", default=30)
 
