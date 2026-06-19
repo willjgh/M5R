@@ -148,7 +148,9 @@ constraints = Constraint(
     moment_bounds=True,
     moment_matrices=True,
     moment_equations=True,
-    factorization=False
+    factorization=False,
+    telegraph_moments=True,
+    telegraph_moments_ineq=True
 )
 
 # construct optimizer
