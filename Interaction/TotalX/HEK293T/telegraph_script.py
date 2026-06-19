@@ -4,7 +4,7 @@
 
 import argparse
 from SDP_interaction_inference.constraints import Constraint
-from SDP_interaction_inference.optimization import ModelFreeOptimization
+from SDP_interaction_inference.optimization import TelegraphOptimization
 from SDP_interaction_inference.dataset import SparseDataset
 import pandas as pd
 import numpy as np
@@ -20,7 +20,6 @@ parser = argparse.ArgumentParser()
 
 # dataset arguments
 parser.add_argument("--array_index", type=int)
-parser.add_argument("--test_limit", default=-1, type=int)
 #parset.add_argument("--splits", default=1, type=int)
 
 # bootstrap arguments
@@ -29,8 +28,10 @@ parser.add_argument("--resamples", default=1000, type=int)
 
 # optimization arguments
 parser.add_argument("--d", default=3, type=int)
-parser.add_argument("--time_limit", default=30, type=float)
-parser.add_argument("--total_time_limit", default=30, type=float)
+parser.add_argument("--fixed", nargs="*", default=[(3, 1)])
+parser.add_argument("--K", default=None)
+parser.add_argument("--time_limit", default=30, type=int)
+parser.add_argument("--total_time_limit", default=30, type=int)
 parser.add_argument("--cut_limit", default=100, type=int)
 
 # result arguments
@@ -53,14 +54,17 @@ adata_miRNA = ad.read_h5ad("TotalX_HEK293T_miRNA.h5ad")
 # load capture
 beta = np.loadtxt("TotalX_HEK293T_capture.txt")
 
-# test limit on pcRNA
-if args.test_limit == -1:
-    G = None
-else:
-    G = args.test_limit
+# load birth death results
+BD_df = pd.read_csv(f"Results/BD_{args.array_index}.csv", index_col=0)
+
+# select infeasible pcRNA
+pcRNA_names = BD_df[BD_df.iloc[:, 0] == "INFEASIBLE"].index.tolist()
+
+# convert to adata indices
+mask_ad = adata_pcRNA.var['GeneName'].isin(pcRNA_names)
+pcRNA_idxs = mask_ad.index[mask_ad]
 
 # names
-pcRNA_names = adata_pcRNA.var['GeneName'].tolist()[:G]
 miRNA_name = adata_miRNA.var['GeneName'].iloc[args.array_index]
 
 # ------------------------------------------------------------------------------
@@ -78,7 +82,7 @@ dataset_SDP = SparseDataset()
 # construct dataset of miRNA paired with mRNA
 dataset_SDP.construct_dataset(
     adata_miRNA[:, args.array_index],
-    adata_pcRNA[:, :G],
+    adata_pcRNA[:, pcRNA_idxs],
     beta
 )
 
@@ -92,34 +96,39 @@ dataset_SDP.bootstrap(
 constraints = Constraint(
     moment_bounds=True,
     moment_matrices=True,
-    factorization=True
+    moment_equations=True,
+    factorization=False,
+    telegraph_moments=True,
+    telegraph_moments_ineq=True
 )
 
 # construct optimizer
-opt_MF_ind = ModelFreeOptimization(
+opt_TE = TelegraphOptimization(
     dataset_SDP,
     d_bd=args.d,
-    d_me=0,
+    d_me=args.d,
     d_sd=args.d,
     constraints=constraints,
     printing=False,
     silent=True,
     time_limit=args.time_limit,
     total_time_limit=args.total_time_limit,
-    cut_limit=args.cut_limit
+    cut_limit=args.cut_limit,
+    fixed=args.fixed,
+    K=args.K
 )
 
 # optimize
-opt_MF_ind.analyse_dataset()
+opt_TE.analyse_dataset()
 
 # for each desired result
 for res in args.results:
 
     # extract results
-    res_list = [solution[res] for solution in opt_MF_ind.result_dict.values()]
+    res_list = [solution[res] for solution in opt_TE.result_dict.values()]
 
     # store
     result_df[f'{miRNA_name}_d{args.d}_c{int(args.confidence * 100)}_{res}'] = res_list
 
 # write results
-result_df.to_csv(f"Results/ind_MF_{args.array_index}.csv")
+result_df.to_csv(f"Results/TE_{args.array_index}.csv")
