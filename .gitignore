@@ -8,6 +8,7 @@ Interaction/Latent-Experiments/Cell-Cycle-Investigation/Results/Script-Outfiles/
 Interaction/Latent-Experiments/Cell-Cycle-Investigation/Results/Script-Testing/
 Interaction/TotalX/HEK293T/Results/
 Interaction/TotalX/HEK293T/Capture-testing/Results-capture/
+Interaction/SmartSeqTotal-New/FIB/Results/
 *.h5ad
 *.rds
 *.RData
